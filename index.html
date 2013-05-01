@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>EventApp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>  
+
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/css/jquery.mobile.structure-1.2.0.min.css" />
+
+    <script type="text/javascript" charset="utf-8" src="js/core/cordova-2.1.0.js"></script>
+    <script type="text/javascript" charset="utf-8" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.js"></script>
+    <script type="text/javascript">
+    $(document).ready( function() {
+    $('div.ui-page').live("swipeleft", function () {
+        var nextpage = $(this).next('div[data-role="page"]');
+        if (nextpage.length > 0) {
+            $.mobile.changePage(nextpage, {
+                transition: "slide",
+                reverse: false
+            });
+        }
+    });
+    $('div.ui-page').live("swiperight", function () {
+        var prevpage = $(this).prev('div[data-role="page"]');
+        if (prevpage.length > 0) {
+            $.mobile.changePage(prevpage, {
+                transition: "slide",
+                reverse: true
+            });
+        }
+    });
+    });
+    </script>
+</head>
+<body>
+<div data-role="page">
+    <div data-role="header">
+        <h2 class="ui-title">Page one</h2>
+    </div>
+    <div data-role="content">
+        You are in page one.
+    </div>
+    <div data-role="footer" data-id="foo1" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="index.html" data-icon="home">Home</a></li>
+                <li><a href="b.html" data-icon="info">Info</a></li>
+                <li><a href="#" data-icon="gear">Settings</a></li>
+            </ul>
+        </div><!-- /navbar -->
+    </div><!-- /footer -->
+</div>
+<div data-role="page">
+    <div data-role="header">
+        <h2 class="ui-title">Page two</h2>
+    </div>
+    <div data-role="content">
+        You are in page two.
+    </div>
+    <div data-role="footer" data-id="foo1" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="index.html" data-icon="home">Home</a></li>
+                <li><a href="b.html" data-icon="info">Info</a></li>
+                <li><a href="#" data-icon="gear">Settings</a></li>
+            </ul>
+        </div><!-- /navbar -->
+    </div><!-- /footer -->
+</div>
+<div data-role="page">
+    <div data-role="header">
+        <h2 class="ui-title">Page three</h2>
+    </div>
+    <div data-role="content">
+        You are in page three.
+    </div>
+    <div data-role="footer" data-id="foo1" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="index.html" data-icon="home">Home</a></li>
+                <li><a href="b.html" data-icon="info">Info</a></li>
+                <li><a href="#" data-icon="gear">Settings</a></li>
+            </ul>
+        </div><!-- /navbar -->
+    </div><!-- /footer -->
+</div>
+<div data-role="page">
+    <div data-role="header">
+        <h2 class="ui-title">The map</h2>
+    </div>
+    <div data-role="content">
+        <div id="map_canvas"></div>
+    </div>
+    <div data-role="footer" data-id="foo1" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="index.html" data-icon="home">Home</a></li>
+                <li><a href="b.html" data-icon="info">Info</a></li>
+                <li><a href="#" data-icon="gear">Settings</a></li>
+            </ul>
+        </div><!-- /navbar -->
+    </div><!-- /footer -->
+</div>
+</body>
