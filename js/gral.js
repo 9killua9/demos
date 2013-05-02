@@ -159,7 +159,7 @@ function get_random_color()
 {
   //return '#'+'0123456789abcdef'.split('').map(function(v,i,a){return i>5 ? null : a[Math.floor(Math.random()*8)] }).join(''); 
   var rint = Math.round(0xffffff * Math.random());
-  return 'rgba(' + (rint >> 16) + ',' + (rint >> 8 & 255) + ',' + (rint & 255) + ', 0.3)';
+  return 'rgba(' + (rint >> 21) + ',' + (rint >> 4 & 255) + ',' + (rint & 255) + ', 0.3)';
 }
 /* Funciones de el framework para leer los resultados del ajax
 =================================================================== */
@@ -191,7 +191,7 @@ function termina(xq,v)
         $i                  = 0;
         $j                  = 0;
         $b                  = 0;
-        $ht                 = '';
+        $ht                 = '<div class="header">Tus fiestas</div><div class="headerSombra"></div>';
         $htv                = '';
         fechaEventoActual   = '';
 
@@ -215,7 +215,13 @@ function termina(xq,v)
                         $esty       = 'style="text-decoration: line-through !important; color:#999999;"';
                     }
 
-                    $col = get_random_color();
+                    /*$col = get_random_color();*/
+
+                    if($i%2 == 0)
+                        $col = "rgba(0,0,0, 0.71)";/*$col = "rgba(5,33,248, 0.2)";*/
+                    else
+                        $col = "rgba(255,255,255, 0.1)";
+
                     if(mes == v['compara_mes'] && dia > v['compara_dia'])
                     {
                         $ht += '<div class="swiper-slide W257X112" id="'+v[$i]['id']+'" style="height:133px !important; background-color:'+$col+' ">\

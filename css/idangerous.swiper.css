@@ -14,7 +14,7 @@
 */
 
 /* Swiper Styles */
-body{height: 100% !important; margin:0px;}
+body{height: 100% !important; margin:0px; background:url("../template/fondo/fondo.jpg") repeat scroll 0 0 transparent;}
 *{margin:0px !important; padding:0px !important;}
 .swiper-container {
 	position:relative;
@@ -75,15 +75,15 @@ body{height: 100% !important; margin:0px;}
 	height: 200px;
 }
 .contenedorImagenMini{width:130px; height: 130px;margin-top: 15px !important;margin-left:15px !important;}
-.contenedorImagenMini img{width:130px !important;}
-.W257X112{line-height: normal !important;}
+.contenedorImagenMini img{width:130px !important; -webkit-border-radius:3px;}
+.W257X112{line-height: normal !important; border-bottom: 1px solid #000000;}
 .W257X112 div, .W257X112 span, .W257X112 p{line-height: normal !important; font-size: .7em;font-family: tahoma;}
-.acomodaTextoIzquierda{text-align: left !important;padding:9px !important;}
+.acomodaTextoIzquierda{text-align: left !important;padding:9px !important;margin-top:3px !important;}
 .botonVerMas{
 	clear:both;
 }
 .botonVerMas{
-	margin:12px !important;
+	margin-top:12px !important;
     position: relative; 
     overflow: visible; 
     display: inline-block; 
@@ -173,6 +173,8 @@ body{height: 100% !important; margin:0px;}
 	background-image: -ms-linear-gradient( #3c3c3c , #111 );
 	background-image: -o-linear-gradient( #3c3c3c , #111 );
 	background-image: linear-gradient( #3c3c3c , #111 );
+	line-height: normal !important;
+	font-family: Arial;
 }
 .headerSombra
 {
@@ -184,4 +186,57 @@ background-color: rgba(73, 164, 230, 0.1);
 padding: 1px;
 border: 2px solid #009ff2;
 margin-left: -3px;
-margin-top: -3px;}
+margin-top: -3px;
+width: 100%;
+margin-top: -39px !important;
+height: 37px;
+margin-left: -3px !important;
+}
+.fondo1{background:url("../template/fondo/1.png") no-repeat scroll  0 0 transparent; width:254px; height: 500px; margin:0 auto !important;}
+
+
+.botonVerMas1{
+	margin:12px !important;
+    position: relative; 
+    overflow: visible; 
+    display: inline-block; 
+    padding: 0.5em 1em !important; 
+    border: 1px solid #d4d4d4; 
+    margin: 0;
+    text-decoration: none; 
+    font:11px/normal sans-serif; 
+    text-shadow: -1px -1px 0 rgba(0,0,0,0.3); 
+    color: #fff; 
+    white-space: nowrap; 
+    cursor: pointer; 
+    outline: none; 
+    background-color: #3072b3;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#599bdc), to(#3072b3));
+    background-image: -moz-linear-gradient(#599bdc, #3072b3);
+    background-image: -o-linear-gradient(#599bdc, #3072b3);
+    background-image: linear-gradient(#599bdc, #3072b3);
+    -webkit-background-clip: padding !important;
+    -moz-background-clip: padding !important;
+    -o-background-clip: padding-box; 
+    /*background-clip: padding-box;*/ /* commented out due to Opera 11.10 bug */
+    -webkit-border-radius: 0.2em; 
+    -moz-border-radius: 0.2em; 
+    border-radius: 0.2em; 
+    /* IE hacks */
+    zoom: 1; 
+    *display: inline; 
+}
+.botonVerMas1:hover,
+.botonVerMas1:focus,
+.botonVerMas1:active {
+    border-color: #3072b3;
+    border-bottom-color: #2a65a0;
+    text-decoration: none; 
+    text-shadow: -1px -1px 0 rgba(0,0,0,0.3); 
+    color: #fff; 
+    background-color: #3072b3;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#599bdc), to(#3072b3));
+    background-image: -moz-linear-gradient(#599bdc, #3072b3);
+    background-image: -o-linear-gradient(#599bdc, #3072b3);
+    background-image: linear-gradient(#599bdc, #3072b3);
+}
