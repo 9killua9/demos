@@ -157,7 +157,9 @@ function provContDonde(id,p)
 }
 function get_random_color()
 {
-  return '#'+'0123456789abcdef'.split('').map(function(v,i,a){return i>5 ? null : a[Math.floor(Math.random()*8)] }).join(''); 
+  //return '#'+'0123456789abcdef'.split('').map(function(v,i,a){return i>5 ? null : a[Math.floor(Math.random()*8)] }).join(''); 
+  var rint = Math.round(0xffffff * Math.random());
+  return 'rgba(' + (rint >> 16) + ',' + (rint >> 8 & 255) + ',' + (rint & 255) + ', 0.3)';
 }
 /* Funciones de el framework para leer los resultados del ajax
 =================================================================== */
@@ -225,7 +227,7 @@ function termina(xq,v)
                                         <p class="floatLeft nombreDelBoliche futura w100" style="margin-bottom:5px !important;"><strong>'+v[$i]['titulo']+'</strong></p>\
                                         <p class="floatLeft direccionDelBoliche futura" style="margin-top:8px;">'+v[$i]['dir_boliche']+'</p>\
                                         <p class="floatLeft provinciaDelBoliche futura" style="clear:both;">'+v[$i]['barrio']+'</p>\
-                                        <p class="floatLeft botonVerMas">ver info</p>\
+                                        <p class="floatLeft botonVerMas icon add">ver info</p>\
                                     </div>\
                                 </div>';
                             $j++;
@@ -239,9 +241,9 @@ function termina(xq,v)
                                     </div>\
                                     <div class="floatLeft acomodaTextoIzquierda">\
                                         <p class="floatLeft nombreDelBoliche futura w100" style="margin-bottom:5px !important;"><strong>'+v[$i]['titulo']+'</strong></p>\
-                                        <p class="floatLeft direccionDelBoliche futura">'+v[$i]['dir_boliche']+'</p>\
-                                        <p class="floatLeft provinciaDelBoliche futura">'+v[$i]['barrio']+'</p>\
-                                        <p class="floatLeft botonVerMas">ver info</p>\
+                                        <p class="floatLeft direccionDelBoliche futura" style="margin-top:8px;">'+v[$i]['dir_boliche']+'</p>\
+                                        <p class="floatLeft provinciaDelBoliche futura" style="clear:both;">'+v[$i]['barrio']+'</p>\
+                                        <p class="floatLeft botonVerMas icon add">ver info</p>\
                                     </div>\
                                 </div>';
                             $j++;
