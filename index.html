@@ -1,114 +1,83 @@
-<!DOCTYPE HTML>
-<html>
+
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
 <head>
-    <title>EventApp</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>  
-
-    <link rel="stylesheet" href="css/jquery.mobile.custom.structure.css" />
-    <link rel="stylesheet" href="css/jquery.mobile.custom.structure.min.css" />
-    <link rel="stylesheet" href="css/jquery.mobile.custom.theme.css" />
-    <link rel="stylesheet" href="css/jquery.mobile.custom.theme.min.css" />
-
-    <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
-    <script type="text/javascript" charset="utf-8" src="js/jquerymobile.js"></script>
-    <script type="text/javascript" charset="utf-8" src="js/jquery.mobile.custom.js"></script>
-    <script type="text/javascript" charset="utf-8" src="js/jquery.mobile.custom.min.js"></script>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Swiper Demos</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>  
+<meta name="description" content="Swiper demos and examples">
+<meta name="keywords" content="swiper, mobile slider, touch slider, ios slider, android slider, touch gallery, jquery slider, jquery mobile slider, web app slider, native app slider, free slider, swipe slider">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="css/idangerous.swiper.css">
+<link rel="stylesheet" href="css/style.css?v=1.8">
+<link rel="stylesheet" href="css/swiper-demos.css?v=1.8">
+<script  src="js/libs/jquery-1.7.1.min.js"></script>
+<!-- Swiper -->
+<script  src="js/idangerous.swiper-1.9.1.min.js"></script>
+<!-- Swiper Scrollbar plugin -->
+<script  src="js/idangerous.swiper.scrollbar-1.2.js"></script>
+<!-- Demos code -->
+<script  src="js/swiper-demos.js"></script>
+    <style>
+  /*
+  Bad practise to use inline styles but good place to show you as an example
+  */
+  .swiper-scrollbar {
+    width: 100%;
+    height: 4px;
+    border-radius: 10px;
+    position: absolute;
+    left:0;
+    bottom:2px;
+    -ms-touch-action: none;
+    background: none
+  }
+  .swiper-scrollbar-drag {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    background: rgba(0,0,0,0.5);
+    border-radius: 10px;
     
-    <script type="text/javascript">
-    $(document).bind("mobileinit", function(){
-        
-        $.mobile.defaultPageTransition='none';
-
-        $('div.ui-page').live("swipeleft", function () {
-            var nextpage = $(this).next('div[data-role="page"]');
-            if (nextpage.length > 0) {
-                $.mobile.changePage(nextpage, {
-                    transition: "slide",
-                    reverse: false
-                });
-            }
-        });
-        
-        $('div.ui-page').live("swiperight", function () {
-            var prevpage = $(this).prev('div[data-role="page"]');
-            if (prevpage.length > 0) {
-                $.mobile.changePage(prevpage, {
-                    transition: "slide",
-                    reverse: true
-                });
-            }
-        });
-
-    });
-    </script>
+  }
+  </style>
 </head>
+
 <body>
-<div data-role="page">
-    <div data-role="header">
-        <h2 class="ui-title">Page one</h2>
+
+<div role="main" class="main">
+  <div class="swiper-container swiper-nested1 swiper-n1">
+    <div class="pagination-nested1 pagination-n1"><span class="swiper-pagination-switch swiper-active-switch swiper-activeslide-switch"></span><span class="swiper-pagination-switch swiper-active-switch"></span><span class="swiper-pagination-switch swiper-active-switch"></span><span class="swiper-pagination-switch"></span><span class="swiper-pagination-switch"></span><span class="swiper-pagination-switch"></span><span class="swiper-pagination-switch"></span><span class="swiper-pagination-switch"></span></div>
+    <div class="swiper-wrapper" style="width: 1680px; height: 250px; transition: 0.3s; -webkit-transition: 0.3s; -webkit-transform: translate3d(0px, 0px, 0px);">
+      <div class="swiper-slide red-slide" style="width: 210px; height: 250px;"> Slide 1 </div>
+      <div class="swiper-slide" style="width: 210px; height: 250px;">
+        <div class="swiper-container swiper-nested2 swiper-n2">
+          <div class="pagination-nested2 pagination-n2"><span class="swiper-pagination-switch swiper-active-switch swiper-activeslide-switch"></span><span class="swiper-pagination-switch swiper-active-switch"></span><span class="swiper-pagination-switch"></span><span class="swiper-pagination-switch"></span><span class="swiper-pagination-switch"></span><span class="swiper-pagination-switch"></span></div>
+          <div class="swiper-wrapper" style="width: 210px; height: 750px;">
+            <div class="swiper-slide green-slide" style="width: 210px; height: 125px;">Vertical Slide 1</div>
+            <div class="swiper-slide blue-slide" style="width: 210px; height: 125px;">Vertical Slide 2</div>
+            <div class="swiper-slide pink-slide" style="width: 210px; height: 125px;">Vertical Slide 3</div>
+            <div class="swiper-slide green-slide" style="width: 210px; height: 125px;">Vertical Slide 4</div>
+            <div class="swiper-slide blue-slide" style="width: 210px; height: 125px;">Vertical Slide 5</div>
+            <div class="swiper-slide pink-slide" style="width: 210px; height: 125px;">Vertical Slide 6</div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide orange-slide" style="width: 210px; height: 250px;"> Slide 3 </div>
+      <div class="swiper-slide green-slide" style="width: 210px; height: 250px;"> Slide 4 </div>
+      <div class="swiper-slide pink-slide" style="width: 210px; height: 250px;"> Slide 5 </div>
+      <div class="swiper-slide orange-slide" style="width: 210px; height: 250px;"> Slide 6 </div>
+      <div class="swiper-slide green-slide" style="width: 210px; height: 250px;"> Slide 7 </div>
+      <div class="swiper-slide pink-slide" style="width: 210px; height: 250px;"> Slide 8 </div>
     </div>
-    <div data-role="content">
-        You are in page one.
-    </div>
-    <div data-role="footer" data-id="foo1" data-position="fixed">
-        <div data-role="navbar">
-            <ul>
-                <li><a href="index.html" data-icon="home">Home</a></li>
-                <li><a href="b.html" data-icon="info">Info</a></li>
-                <li><a href="#" data-icon="gear">Settings</a></li>
-            </ul>
-        </div><!-- /navbar -->
-    </div><!-- /footer -->
-</div>
-<div data-role="page">
-    <div data-role="header">
-        <h2 class="ui-title">Page two</h2>
-    </div>
-    <div data-role="content">
-        You are in page two.
-    </div>
-    <div data-role="footer" data-id="foo1" data-position="fixed">
-        <div data-role="navbar">
-            <ul>
-                <li><a href="index.html" data-icon="home">Home</a></li>
-                <li><a href="b.html" data-icon="info">Info</a></li>
-                <li><a href="#" data-icon="gear">Settings</a></li>
-            </ul>
-        </div><!-- /navbar -->
-    </div><!-- /footer -->
-</div>
-<div data-role="page">
-    <div data-role="header">
-        <h2 class="ui-title">Page three</h2>
-    </div>
-    <div data-role="content">
-        You are in page three.
-    </div>
-    <div data-role="footer" data-id="foo1" data-position="fixed">
-        <div data-role="navbar">
-            <ul>
-                <li><a href="index.html" data-icon="home">Home</a></li>
-                <li><a href="b.html" data-icon="info">Info</a></li>
-                <li><a href="#" data-icon="gear">Settings</a></li>
-            </ul>
-        </div><!-- /navbar -->
-    </div><!-- /footer -->
-</div>
-<div data-role="page">
-    <div data-role="header">
-        <h2 class="ui-title">The map</h2>
-    </div>
-    <div data-role="content">
-        <div id="map_canvas"></div>
-    </div>
-    <div data-role="footer" data-id="foo1" data-position="fixed">
-        <div data-role="navbar">
-            <ul>
-                <li><a href="index.html" data-icon="home">Home</a></li>
-                <li><a href="b.html" data-icon="info">Info</a></li>
-                <li><a href="#" data-icon="gear">Settings</a></li>
-            </ul>
-        </div><!-- /navbar -->
-    </div><!-- /footer -->
+  </div>
 </div>
 </body>
+</html>
