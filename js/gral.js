@@ -223,8 +223,8 @@ function termina(xq,v)
                                     </div>\
                                     <div class="floatLeft acomodaTextoIzquierda">\
                                         <p class="floatLeft nombreDelBoliche futura w100" style="margin-bottom:5px !important;"><strong>'+v[$i]['titulo']+'</strong></p>\
-                                        <p class="floatLeft direccionDelBoliche futura">'+v[$i]['dir_boliche']+'</p>\
-                                        <p class="floatLeft provinciaDelBoliche futura">'+v[$i]['barrio']+'</p>\
+                                        <p class="floatLeft direccionDelBoliche futura" style="margin-top:8px;">'+v[$i]['dir_boliche']+'</p>\
+                                        <p class="floatLeft provinciaDelBoliche futura" style="clear:both;">'+v[$i]['barrio']+'</p>\
                                         <p class="floatLeft botonVerMas">ver info</p>\
                                     </div>\
                                 </div>';
