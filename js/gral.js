@@ -155,7 +155,10 @@ function provContDonde(id,p)
 
     window.location.href="interna.html";
 }
-
+function get_random_color()
+{
+  return '#'+'0123456789abcdef'.split('').map(function(v,i,a){return i>5 ? null : a[Math.floor(Math.random()*8)] }).join(''); 
+}
 /* Funciones de el framework para leer los resultados del ajax
 =================================================================== */
 function termina(xq,v)
@@ -210,37 +213,37 @@ function termina(xq,v)
                         $esty       = 'style="text-decoration: line-through !important; color:#999999;"';
                     }
 
+                    $col = get_random_color();
                     if(mes == v['compara_mes'] && dia > v['compara_dia'])
                     {
-                        $ht += '<div class="swiper-slide green-slide W257X112" id="'+v[$i]['id']+'" style="width: 210px; height: 200px !important;">\
-                                <div class="floatLeft" >\
-                                <div class="floatLeft overflowHidden contenedorImagenMini miniImagenFiesta">\
-                                    <img src="http://www.reiatsu.com.ar/clientes/frizze/facebook/fiestas_frizze/'+v[$i]['imagen']+'" class="floatLeft" style="width:60px;" />\
-                                </div>\
-                                <div class="floatLeft w180">\
-                                    <p class="floatLeft diaDeLaSemanaFiesta futura w100">'+v[$i]['fecha']+'</p>\
-                                    <p class="floatLeft nombreDelBoliche futura w100">'+v[$i]['titulo']+'</p>\
-                                    <p class="floatLeft direccionDelBoliche futura">'+v[$i]['dir_boliche']+'</p>\
-                                    <div class="clearBoth"></div>\
-                                    <p class="floatLeft provinciaDelBoliche futura">'+v[$i]['barrio']+'</p>\
-                                </div>\
-                            </div>';
+                        $ht += '<div class="swiper-slide W257X112" id="'+v[$i]['id']+'" style="height:133px !important; background-color:'+$col+' ">\
+                                    <div class="floatLeft overflowHidden contenedorImagenMini miniImagenFiesta">\
+                                        <img src="http://www.reiatsu.com.ar/clientes/frizze/facebook/fiestas_frizze/'+v[$i]['imagen']+'" class="floatLeft" style="width:60px;" />\
+                                        <div class="floatLeft" style=" width:120px;text-align:center;font-size:0.8em !important">'+v[$i]['fecha']+'</div>\
+                                    </div>\
+                                    <div class="floatLeft acomodaTextoIzquierda">\
+                                        <p class="floatLeft nombreDelBoliche futura w100" style="margin-bottom:5px !important;"><strong>'+v[$i]['titulo']+'</strong></p>\
+                                        <p class="floatLeft direccionDelBoliche futura">'+v[$i]['dir_boliche']+'</p>\
+                                        <p class="floatLeft provinciaDelBoliche futura">'+v[$i]['barrio']+'</p>\
+                                        <p class="floatLeft botonVerMas">ver info</p>\
+                                    </div>\
+                                </div>';
                             $j++;
                     }
                     else if( mes > v['compara_mes'] )
                     {
-                        $ht += '<div class="floatLeft W257X112" id="'+v[$i]['id']+'">\
-                                <div class="floatLeft overflowHidden contenedorImagenMini miniImagenFiesta">\
-                                    <img src="'+v[$i]['imagen']+'" class="floatLeft" />\
-                                </div>\
-                                <div class="floatLeft w180">\
-                                    <p class="floatLeft diaDeLaSemanaFiesta futura w100">'+v[$i]['fecha']+'</p>\
-                                    <p class="floatLeft nombreDelBoliche futura w100">'+v[$i]['titulo']+'</p>\
-                                    <p class="floatLeft direccionDelBoliche futura">'+v[$i]['dir_boliche']+'</p>\
-                                    <div class="clearBoth"></div>\
-                                    <p class="floatLeft provinciaDelBoliche futura">'+v[$i]['barrio']+'</p>\
-                                </div>\
-                            </div>';
+                        $ht += '<div class="swiper-slide W257X112" id="'+v[$i]['id']+'" style="height:133px !important; background-color:'+$col+' ">\
+                                    <div class="floatLeft overflowHidden contenedorImagenMini miniImagenFiesta">\
+                                        <img src="http://www.reiatsu.com.ar/clientes/frizze/facebook/fiestas_frizze/'+v[$i]['imagen']+'" class="floatLeft" style="width:60px;" />\
+                                        <div class="floatLeft" style=" width:120px;text-align:center;font-size:0.8em !important">'+v[$i]['fecha']+'</div>\
+                                    </div>\
+                                    <div class="floatLeft acomodaTextoIzquierda">\
+                                        <p class="floatLeft nombreDelBoliche futura w100" style="margin-bottom:5px !important;"><strong>'+v[$i]['titulo']+'</strong></p>\
+                                        <p class="floatLeft direccionDelBoliche futura">'+v[$i]['dir_boliche']+'</p>\
+                                        <p class="floatLeft provinciaDelBoliche futura">'+v[$i]['barrio']+'</p>\
+                                        <p class="floatLeft botonVerMas">ver info</p>\
+                                    </div>\
+                                </div>';
                             $j++;
                     }
                     else

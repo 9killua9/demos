@@ -291,8 +291,6 @@
 	font-size: 40px;
 }
 .pagination-nested1 {
-    left: 10px;
-    top: 230px;
     width: 160px;
 	position:absolute;
 	z-index:20;

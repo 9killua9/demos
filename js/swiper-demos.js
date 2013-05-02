@@ -16,7 +16,8 @@ function funcionesDeCarga()
 	$w = parseInt($(window).width());
 	$h = parseInt($(window).height());
 	
-	$(".acomodaAlto,  .swiper-n3, .red-slide, .swiper-n1, .swiper-n2").height($h);
+	$(".acomodaAlto, .swiper-n3, .red-slide, .swiper-n1, .swiper-n2").height($h);
+	$(".pagination-nested1").attr('style',"margin-top:"+($h-30)+'px !important;');
 
 	keyname = window.localStorage.key("prov");
     // keyname is now equal to "key"

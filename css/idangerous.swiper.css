@@ -14,7 +14,7 @@
 */
 
 /* Swiper Styles */
-body{height: 100% !important;}
+body{height: 100% !important; margin:0px;}
 *{margin:0px !important; padding:0px !important;}
 .swiper-container {
 	position:relative;
@@ -74,5 +74,41 @@ body{height: 100% !important;}
 	width: 500px;
 	height: 200px;
 }
-
-
+.contenedorImagenMini{width:130px; height: 130px;margin-top: 15px !important;margin-left:15px !important;}
+.contenedorImagenMini img{width:130px !important;}
+.W257X112{line-height: normal !important;}
+.W257X112 div, .W257X112 span, .W257X112 p{line-height: normal !important; font-size: .7em;font-family: tahoma;}
+.acomodaTextoIzquierda{text-align: left !important;padding:9px !important;}
+.botonVerMas{
+	clear:both;
+	margin: 10px 0px !important;
+	font-size: 14px;
+	color: #ffffff;
+	padding: 5px 10px !important;
+	background: -moz-linear-gradient(
+		top,
+		#8e96ed 0%,
+		#b2b0ed 25%,
+		#3f48a6);
+	background: -webkit-gradient(
+		linear, left top, left bottom, 
+		from(#8e96ed),
+		color-stop(0.25, #b2b0ed),
+		to(#3f48a6));
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	border: 1px solid #6b6b6b;
+	-moz-box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px -1px 0px rgba(15,12,15,0.7);
+	-webkit-box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px -1px 0px rgba(15,12,15,0.7);
+	box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px -1px 0px rgba(15,12,15,0.7);
+	text-shadow:
+		0px -1px 1px rgba(000,000,000,0.2),
+		0px 1px 0px rgba(255,255,255,0.3);
+}
