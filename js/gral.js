@@ -191,7 +191,7 @@ function termina(xq,v)
         $i                  = 0;
         $j                  = 0;
         $b                  = 0;
-        $ht                 = '<div class="header">Tus fiestas</div><div class="headerSombra"></div>';
+        $ht                 = '<div class="header">PR&Oacute;XIMAS FIESTAS</div><div class="headerSombra"></div>';
         $htv                = '';
         fechaEventoActual   = '';
 
@@ -224,7 +224,7 @@ function termina(xq,v)
 
                     if(mes == v['compara_mes'] && dia > v['compara_dia'])
                     {
-                        $ht += '<div class="swiper-slide W257X112" id="'+v[$i]['id']+'" style="height:133px !important; background-color:'+$col+' ">\
+                        $ht += '<div class="swiper-slide W257X112" style="height:133px !important; background-color:'+$col+' ">\
                                     <div class="floatLeft overflowHidden contenedorImagenMini miniImagenFiesta">\
                                         <img src="http://www.reiatsu.com.ar/clientes/frizze/facebook/fiestas_frizze/'+v[$i]['imagen']+'" class="floatLeft" style="width:60px;" />\
                                         <div class="floatLeft" style=" width:120px;text-align:center;font-size:0.8em !important">'+v[$i]['fecha']+'</div>\
@@ -233,14 +233,14 @@ function termina(xq,v)
                                         <p class="floatLeft nombreDelBoliche futura w100" style="margin-bottom:5px !important;"><strong>'+v[$i]['titulo']+'</strong></p>\
                                         <p class="floatLeft direccionDelBoliche futura" style="margin-top:8px;">'+v[$i]['dir_boliche']+'</p>\
                                         <p class="floatLeft provinciaDelBoliche futura" style="clear:both;">'+v[$i]['barrio']+'</p>\
-                                        <p class="floatLeft botonVerMas icon add">ver info</p>\
+                                        <p class="floatLeft botonVerMas icon add" id="'+v[$i]['id']+'">ver info</p>\
                                     </div>\
                                 </div>';
                             $j++;
                     }
                     else if( mes > v['compara_mes'] )
                     {
-                        $ht += '<div class="swiper-slide W257X112" id="'+v[$i]['id']+'" style="height:133px !important; background-color:'+$col+' ">\
+                        $ht += '<div class="swiper-slide W257X112" style="height:133px !important; background-color:'+$col+' ">\
                                     <div class="floatLeft overflowHidden contenedorImagenMini miniImagenFiesta">\
                                         <img src="http://www.reiatsu.com.ar/clientes/frizze/facebook/fiestas_frizze/'+v[$i]['imagen']+'" class="floatLeft" style="width:60px;" />\
                                         <div class="floatLeft" style=" width:120px;text-align:center;font-size:0.8em !important">'+v[$i]['fecha']+'</div>\
@@ -249,7 +249,7 @@ function termina(xq,v)
                                         <p class="floatLeft nombreDelBoliche futura w100" style="margin-bottom:5px !important;"><strong>'+v[$i]['titulo']+'</strong></p>\
                                         <p class="floatLeft direccionDelBoliche futura" style="margin-top:8px;">'+v[$i]['dir_boliche']+'</p>\
                                         <p class="floatLeft provinciaDelBoliche futura" style="clear:both;">'+v[$i]['barrio']+'</p>\
-                                        <p class="floatLeft botonVerMas icon add">ver info</p>\
+                                        <p class="floatLeft botonVerMas icon add" id="'+v[$i]['id']+'">ver info</p>\
                                     </div>\
                                 </div>';
                             $j++;
@@ -286,25 +286,31 @@ function termina(xq,v)
             /*$("#cargaBoliViejos").html($htv);*/
             $("#cargaPresentes").html($ht);
             
-            $(".W257X112").click(function(){
+            $(".botonVerMas").click(function(){
                 id = $(this).attr("id");
                 muestraEvento(id,'eventosactivos.php');
             });
-
             cargaSlides();
         }   
     }
     else if( xq == "traeInfo" )
     {
         if(v != null)
-        {
-            $("#imgBol").attr("src",v[0]['imagen']+'?v=1');
-            $("#textoBol").html(v[0]['texto']);
-            $("#tituBol").html(v[0]['titulo']);
-            $("#fechaBol").html(v[0]['fecha']);
-            $("#dirBol,#address").html(v[0]['dir_boliche']);
-            initialize();
-            codeAddress(v[0]['dir_boliche']);
+       {    
+            $w = parseInt($(window).width());
+            $ht = '<div class="contenedor floatLeft">\
+                        <div class="titulo"> \
+                            <strong>'+v[0]['titulo']+'</strong> | <small style="font-size:11px; color:#cdcdcd"> '+v[0]['fecha']+' </small>\
+                        </div>\
+                        <div class="imagen">\
+                            <img src="https://maps.googleapis.com/maps/api/staticmap?center='+v[0]['dir_boliche']+', '+v[0]['barrio']+', '+v[0]['provincia']+', Argentina&zoom=14&size=288x200&markers='+v[0]['dir_boliche']+', '+v[0]['barrio']+', '+v[0]['provincia']+'|&sensor=false" width="288" height="200" />\
+                        </div>\
+                        <div class="dir">'+v[0]['dir_boliche']+', '+v[0]['barrio']+'</div>\
+                        <div class="texto">'+v[0]['texto']+'</div>\
+                   </div>';
+
+            $("#muestraContenido").html($ht);
+            $(".acomodaAlto").css("-webkit-transform","translate3d(-"+($w)+"px, 0px, 0px)")
         }
     }
     else if( xq == "traeInfoPas" )

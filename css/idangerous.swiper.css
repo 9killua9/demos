@@ -156,7 +156,7 @@ body{height: 100% !important; margin:0px; background:url("../template/fondo/fond
 .botonVerMas.add.icon:hover:before,
 .botonVerMas.add.icon:focus:before,
 .botonVerMas.add.icon:active:before { background-position: -12px -288px; }
-.red-slide{background: url('../template/fondo/fondo.jpg') repeat scroll 0 0 transparent !important;}
+.red-slide{background: transparent !important;}
 .header{
 	width:100% !important;
 	border: 1px solid #333;
@@ -187,7 +187,7 @@ padding: 1px;
 border: 2px solid #009ff2;
 margin-left: -3px;
 margin-top: -3px;
-width: 100%;
+width: 101%;
 margin-top: -39px !important;
 height: 37px;
 margin-left: -3px !important;
@@ -240,3 +240,6 @@ margin-left: -3px !important;
     background-image: -o-linear-gradient(#599bdc, #3072b3);
     background-image: linear-gradient(#599bdc, #3072b3);
 }
+.contenedor{line-height: normal !important; background-color: rgba('0,0,0,0.3')}
+.contenedor div{ font-size:12px;font-family: tahoma; text-align: left;}
+#muestraContenido{background-color: rgba(0,0,0,0.6) !important;}

@@ -36,11 +36,11 @@ function cargaSlides()
 		pagination : '.pagination-n1',
 		slidesPerSlide : 1,
 	});
-	var swiperN2 = $('.swiper-n2').swiper({
+	/*var swiperN2 = $('.swiper-n2').swiper({
 		pagination : '.pagination-n2',
 		slidesPerSlide : 2,
 		mode: 'vertical'
-	});
+	});*/
 	var swiperN3 = $('.swiper-n3').swiper({
 		pagination : '.pagination-n3',
 		slidesPerSlide : 3,
@@ -53,3 +53,8 @@ function cargaSlides()
 	});*/
 }
 
+function muestraEvento(id)
+{
+	$data = 'donde='+$("#donde").html()+'&h=traeInfo&id='+id;
+    lmPost($url,$data,"traeInfo");
+}
