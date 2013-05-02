@@ -5,18 +5,25 @@ document.createElement('header');
 document.createElement('footer');
 
 $(document).ready(function(){
-	cargaSlides();
+	$("form[name=cargaInicio]").submit(function(a){
+            a.preventDefault();
+            id = $("select[name=cambiaProvincia]").val();
+            provContDonde(id,"0");
+    });
 })
 function funcionesDeCarga()
 {
 	$w = parseInt($(window).width());
 	$h = parseInt($(window).height());
-	$wDos = $w*3;
+	
+	$(".acomodaAlto,  .swiper-n3, .red-slide, .swiper-n1, .swiper-n2").height($h);
 
-	$(".swiper-slide").width($w);
-	$(".swiper-wrapper").width($wDos);
+	keyname = window.localStorage.key("prov");
+    // keyname is now equal to "key"
+    prov = window.localStorage.getItem(keyname);
 
-	cargaSlides();
+    cargaEventosHome(prov);
+	
 }
 
 
@@ -38,10 +45,10 @@ function cargaSlides()
 		slidesPerSlide : 3,
 		mode: 'vertical'
 	});
-	var swiperN4 = $('.swiper-n4').swiper({
+	/*var swiperN4 = $('.swiper-n4').swiper({
 		pagination : '.pagination-n4',
 		slidesPerSlide : 2,
 		mode: 'vertical'
-	});
+	});*/
 }
 
