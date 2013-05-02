@@ -15,7 +15,6 @@
 
 /* Swiper Styles */
 .swiper-container {
-	margin:0 auto;
 	position:relative;
 	overflow:hidden;
 	-webkit-backface-visibility:hidden;
