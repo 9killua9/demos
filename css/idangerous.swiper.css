@@ -1,6 +1,4 @@
 .cargador{
-	height:800px !important;
-	width:700px !important;
 }
 #circular{
 	margin:10% auto !important;
@@ -205,6 +203,7 @@ body{height: 100% !important; margin:0px; background:url("../template/fondo/fond
 .botonVerMas.add.icon:active:before { background-position: -12px -288px; }
 .red-slide{background: transparent !important;}
 .header{
+	font-size: 22px;
 	width:100% !important;
 	border: 1px solid #333;
 	background: #111;

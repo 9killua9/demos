@@ -5,8 +5,9 @@
 $url     = 'http://www.reiatsu.com.ar/phonegap/fiestas_frizze/php/ajax.php';
 $urlFbk  = 'php/facebook/ajax.php';
 $nImagen = 0;
-$cargador = '<div class="w100 h100 floatLeft cargador" style="background-color:#000000">\
-                 <div id="circular" class="">\
+$cargador = '<div class="positionAbsolute" style="z-index:900; width:'+parseInt($(window).width())+'px; height:'+parseInt($(window).height())+'px;">\
+                <div class="w100 h100 floatLeft cargador" style="background-color:#000000">\
+                <div id="circular" class="">\
                     <div id="circular_1" class="circular"></div>\
                     <div id="circular_2" class="circular"></div>\
                     <div id="circular_3" class="circular"></div>\
@@ -16,8 +17,8 @@ $cargador = '<div class="w100 h100 floatLeft cargador" style="background-color:#
                     <div id="circular_7" class="circular"></div>\
                     <div id="circular_8" class="circular"></div>\
                     <div class="clearfix"></div>\
-                  </div>\
-            </div>';
+                </div>\
+            </div></div>';
 /* Inicio del doc  
 =================== */
 $(document).ready(function(){
@@ -300,7 +301,9 @@ function termina(xq,v)
             
             $(".cargador").remove();
             $(".botonVerMas").click(function(){
-                $("#cargaPresentes").html($cargador);
+                
+                $("#cargaPresentes").append($cargador);
+                
                 id = $(this).attr("id");
                 muestraEvento(id,'eventosactivos.php');
             });
@@ -312,7 +315,8 @@ function termina(xq,v)
         if(v != null)
        {    
             $w = parseInt($(window).width());
-            $ht = '<div class="contenedor floatLeft">\
+            $ht = '<div class="header">VER M&Aacute;S INFO</div><div class="headerSombra"></div>';
+            $ht += '<div class="contenedor floatLeft">\
                         <div class="titulo"> \
                             <strong>'+v[0]['titulo']+'</strong> | <small style="font-size:11px; color:#cdcdcd"> '+v[0]['fecha']+' </small>\
                         </div>\
@@ -325,7 +329,7 @@ function termina(xq,v)
 
             $("#muestraContenido").html($ht);
             $(".acomodaAlto").css("-webkit-transform","translate3d(-"+($w)+"px, 0px, 0px)");
-            $("#cargaPresentes").html($cargador);
+            $(".cargador").remove();
         }
     }
     else if( xq == "traeInfoPas" )

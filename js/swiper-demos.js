@@ -1,6 +1,18 @@
-/*
-Author: Vladimir Kharlampidi, The iDangero.us
-*/
+$cargador = '<div class="positionAbsolute" style="z-index:900; width:'+parseInt($(window).width())+'px; height:'+parseInt($(window).height())+'px;">\
+                <div class="w100 h100 floatLeft cargador" style="background-color:#000000">\
+                <div id="circular" class="">\
+                    <div id="circular_1" class="circular"></div>\
+                    <div id="circular_2" class="circular"></div>\
+                    <div id="circular_3" class="circular"></div>\
+                    <div id="circular_4" class="circular"></div>\
+                    <div id="circular_5" class="circular"></div>\
+                    <div id="circular_6" class="circular"></div>\
+                    <div id="circular_7" class="circular"></div>\
+                    <div id="circular_8" class="circular"></div>\
+                    <div class="clearfix"></div>\
+                </div>\
+            </div></div>';
+
 document.createElement('header');
 document.createElement('footer');
 
@@ -8,8 +20,12 @@ $(document).ready(function(){
 	$("form[name=cargaInicio]").submit(function(a){
             a.preventDefault();
             id = $("select[name=cambiaProvincia]").val();
-            provContDonde(id,"0");
+            if(id != "-" )
+            	provContDonde(id,"0");
+            else
+            	alert("Elija una provincia");
     });
+    $("#cargaPresentes").html($cargador);
 })
 function funcionesDeCarga()
 {
