@@ -1,5 +1,6 @@
-$cargador = '<div class="positionAbsolute" style="z-index:900; width:'+parseInt($(window).width())+'px; height:'+parseInt($(window).height())+'px;">\
+$cargador = '<div class="positionAbsolute aja" style="z-index:900; width:'+parseInt($(window).width())+'px; height:'+parseInt($(window).height())+'px;">\
                 <div class="w100 h100 floatLeft cargador" style="background-color:#000000">\
+                <div> Cargando </div>\
                 <div id="circular" class="">\
                     <div id="circular_1" class="circular"></div>\
                     <div id="circular_2" class="circular"></div>\
@@ -10,6 +11,9 @@ $cargador = '<div class="positionAbsolute" style="z-index:900; width:'+parseInt(
                     <div id="circular_7" class="circular"></div>\
                     <div id="circular_8" class="circular"></div>\
                     <div class="clearfix"></div>\
+                </div>\
+                <div class="imagencita">\
+                    <img src="template/fondo/2.png" alt="envases"/>\
                 </div>\
             </div></div>';
 

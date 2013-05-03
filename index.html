@@ -31,12 +31,17 @@
     /*if( window.localStorage.getItem("prov") != null || window.localStorage.getItem("prov") != "NULL")
             window.location.href="interna.html";
 */
-    document.addEventListener("deviceready",onDeviceReady,false);
+    $(document).ready(function(){
 
+        keyname = window.localStorage.key("prov");
+        // keyname is now equal to "key"
+        prov = window.localStorage.getItem(keyname);
+        if (prov != null)
+          window.location.href="interna.html";
+    });
+    document.addEventListener("deviceready",onDeviceReady,false);
     // Cordova is ready
     //
-    function onDeviceReady() {
-    }
     
     function provContDonde(id,p)
     {

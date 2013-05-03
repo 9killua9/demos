@@ -1,8 +1,10 @@
+.aja div{line-height: normal !important; margin:0 auto !important; font-family: tahoma; font-size: 22px;}
 .cargador{
 }
 #circular{
-	margin:10% auto !important;
-	width:164px;
+	width:124px;
+    margin-top:22px !important;
+    margin-bottom:22px !important;
 }
 .circular{
 	background-color:#5FB7FF;
