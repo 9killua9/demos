@@ -6,7 +6,7 @@ $url     = 'http://www.reiatsu.com.ar/phonegap/fiestas_frizze/php/ajax.php';
 $urlFbk  = 'php/facebook/ajax.php';
 $nImagen = 0;
 $cargador = '<div class="w100 h100 floatLeft cargador" style="background-color:#000000">\
-                 <div id="circular" class="floatLeft">\
+                 <div id="circular" class="">\
                     <div id="circular_1" class="circular"></div>\
                     <div id="circular_2" class="circular"></div>\
                     <div id="circular_3" class="circular"></div>\
@@ -324,7 +324,8 @@ function termina(xq,v)
                    </div>';
 
             $("#muestraContenido").html($ht);
-            $(".acomodaAlto").css("-webkit-transform","translate3d(-"+($w)+"px, 0px, 0px)")
+            $(".acomodaAlto").css("-webkit-transform","translate3d(-"+($w)+"px, 0px, 0px)");
+            $("#cargaPresentes").html($cargador);
         }
     }
     else if( xq == "traeInfoPas" )

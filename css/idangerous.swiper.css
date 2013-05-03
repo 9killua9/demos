@@ -1,9 +1,10 @@
 .cargador{
 	height:800px !important;
+	width:700px !important;
 }
 #circular{
 	margin:10% auto !important;
-	width:64px;
+	width:164px;
 }
 .circular{
 	background-color:#5FB7FF;
