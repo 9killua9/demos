@@ -212,7 +212,7 @@ body{height: 100% !important; margin:0px; background:url("../template/fondo/fond
 	text-shadow: 0  -1px 1px #000 ;
 	height: 30px;
 	text-align: center;
-	padding-top: 4px !important;
+	padding-top: 8px !important;
 	background-image: -webkit-gradient(linear, left top, left bottom, from( #3c3c3c), to( #111 ));
 	background-image: -webkit-linear-gradient( #3c3c3c , #111 );
 	background-image: -moz-linear-gradient( #3c3c3c , #111 );
@@ -230,10 +230,10 @@ cursor: move;
 border-radius: 3px;
 background-color: rgba(73, 164, 230, 0.1);
 padding: 1px;
-border: 2px solid #009ff2;
+border-bottom: 2px solid #009ff2;
 margin-left: -3px;
 margin-top: -3px;
-width: 101%;
+width: 100%;
 margin-top: -39px !important;
 height: 37px;
 margin-left: -3px !important;
@@ -289,3 +289,9 @@ margin-left: -3px !important;
 .contenedor{line-height: normal !important; background-color: rgba('0,0,0,0.3')}
 .contenedor div{ font-size:12px;font-family: tahoma; text-align: left;}
 #muestraContenido{background-color: rgba(0,0,0,0.6) !important;}
+.titulo
+{
+    font-size: 27px !important;
+    padding: 10px !important
+}
+.imagen img{-webkit-border-radius: 7px}
