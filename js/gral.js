@@ -5,7 +5,19 @@
 $url     = 'http://www.reiatsu.com.ar/phonegap/fiestas_frizze/php/ajax.php';
 $urlFbk  = 'php/facebook/ajax.php';
 $nImagen = 0;
-
+$cargador = '<div class="w100 h100 floatLeft cargador" style="background-color:#000000">\
+                 <div id="circular" class="floatLeft">\
+                    <div id="circular_1" class="circular"></div>\
+                    <div id="circular_2" class="circular"></div>\
+                    <div id="circular_3" class="circular"></div>\
+                    <div id="circular_4" class="circular"></div>\
+                    <div id="circular_5" class="circular"></div>\
+                    <div id="circular_6" class="circular"></div>\
+                    <div id="circular_7" class="circular"></div>\
+                    <div id="circular_8" class="circular"></div>\
+                    <div class="clearfix"></div>\
+                  </div>\
+            </div>';
 /* Inicio del doc  
 =================== */
 $(document).ready(function(){
@@ -286,7 +298,9 @@ function termina(xq,v)
             /*$("#cargaBoliViejos").html($htv);*/
             $("#cargaPresentes").html($ht);
             
+            $(".cargador").remove();
             $(".botonVerMas").click(function(){
+                $("#cargaPresentes").html($cargador);
                 id = $(this).attr("id");
                 muestraEvento(id,'eventosactivos.php');
             });
