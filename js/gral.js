@@ -23,14 +23,10 @@ $cargador = '<div class="positionAbsolute aja" style="z-index:900; width:'+parse
                     <img src="template/fondo/2.png" alt="envases"/>\
                 </div>\
             </div></div>';
-/* Inicio del doc  
-=================== */
+
+
 $(document).ready(function(){
-    /* clase .nada hace que no se envien datos ni funcionen clicks 
-==================================================================== */    
-
 });
-
 /* Comienzo de las funciones 
 =================================================================== */
 function cargaEventosHome(prov)

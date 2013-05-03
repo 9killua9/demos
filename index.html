@@ -38,11 +38,24 @@
         prov = window.localStorage.getItem(keyname);
         if (prov != null)
           window.location.href="interna.html";
+        
+        alert("carga");
+        $("form[name=cargaInicio]").submit(function(a){
+                a.preventDefault();
+                id = $("select[name=cambiaProvincia]").val();
+                alerg(id);
+                if(id != "-" )
+                    provContDonde(id,"0");
+                else
+                    alert("Elija una provincia");
+        });
+        $("#cargaPresentes").html($cargador);
+
     });
     document.addEventListener("deviceready",onDeviceReady,false);
     // Cordova is ready
     //
-    
+    function deviceready(){ alert("a")}
     function provContDonde(id,p)
     {
         id = parseInt(id);

@@ -21,16 +21,18 @@ document.createElement('header');
 document.createElement('footer');
 
 $(document).ready(function(){
+
 	$("form[name=cargaInicio]").submit(function(a){
             a.preventDefault();
             id = $("select[name=cambiaProvincia]").val();
+            alerg(id);
             if(id != "-" )
             	provContDonde(id,"0");
             else
             	alert("Elija una provincia");
     });
     $("#cargaPresentes").html($cargador);
-})
+});
 function funcionesDeCarga()
 {
 	$w = parseInt($(window).width());
