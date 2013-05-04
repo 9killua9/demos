@@ -5,24 +5,14 @@
 $url     = 'http://www.reiatsu.com.ar/phonegap/fiestas_frizze/php/ajax.php';
 $urlFbk  = 'php/facebook/ajax.php';
 $nImagen = 0;
-$cargador = '<div class="positionAbsolute aja" style="z-index:900; width:'+parseInt($(window).width())+'px; height:'+parseInt($(window).height())+'px;">\
-                <div class="w100 h100 floatLeft cargador" style="background-color:#000000">\
-                <div> Cargando </div>\
-                <div id="circular" class="">\
-                    <div id="circular_1" class="circular"></div>\
-                    <div id="circular_2" class="circular"></div>\
-                    <div id="circular_3" class="circular"></div>\
-                    <div id="circular_4" class="circular"></div>\
-                    <div id="circular_5" class="circular"></div>\
-                    <div id="circular_6" class="circular"></div>\
-                    <div id="circular_7" class="circular"></div>\
-                    <div id="circular_8" class="circular"></div>\
-                    <div class="clearfix"></div>\
+$cargador = '<div class="positionAbsolute aja overflowHidden" style=" height:134px !important; background:url(template/fondo/pattern_40.gif) repeat scroll 0 0 transparent; opacity:.9; z-index:900; width:'+parseInt($(window).width())+'px;">\
+                <div class="container" style="margin-top:27px !important;">\
+                    <div class="content">\
+                    <div class="ball"></div>\
+                    <div class="ball1"></div>\
+                    </div>\
                 </div>\
-                <div class="imagencita">\
-                    <img src="template/fondo/2.png" alt="envases"/>\
-                </div>\
-            </div></div>';
+            </div>';
 
 
 $(document).ready(function(){
@@ -78,95 +68,6 @@ function buscadorSeccion()
        }
 
     });
-}
-function provContDonde(id,p)
-{
-    id = parseInt(id);
-    switch(id)
-    {
-        case 0:
-            //Buenos aires
-            prov = "Buenos Aires";
-        break;
-        case 3:
-            prov = "Cordoba";
-        break;
-        case 2:
-            prov = "Entre Rios";
-        break;
-        case 12:
-            prov = "Jujuy";
-        break;
-        case 16:
-            prov = "Mendoza";
-        break;
-        case 17:
-            prov = "Neuquen";
-        break;
-        case 10:
-            prov = "Salta";
-        break;
-        case 15:
-            prov = "San Juan";
-        break;
-        case 20:
-            prov = "Santa Cruz";
-        break;
-        case 4:
-            prov = "Santa Fe";
-        break;
-        case 9:
-            prov = "Santiago del Estero";
-        break;
-        case 11:
-            prov = "Tucuman";
-        break;
-        case 12:
-            prov = "Jujuy";
-        break;
-        case 8:
-            prov = "Catamarca";
-        break;
-        case 14:
-            prov = "Chaco";
-        break;
-        case 13:
-            prov = "Formosa";
-        break;
-        case 5:
-            prov = "Corrientes";
-        break;
-        case 6:
-            prov = "Misiones";
-        break;
-        case 7:
-            prov = "La Rioja";
-        break;
-        case 1:
-            prov = "San Luis";
-        break;
-        case 23:
-            prov = "La Pampa";
-        break;
-        case 18:
-            prov = "Rio Negro";
-        break;
-        case 21:
-            prov = "Tierra del Fuego";
-        break;
-        case 19:
-            prov = "Chubut";
-        break;
-        default:
-            prov = "no disponible";
-        break;
-    }
-    window.localStorage.setItem("prov", prov);
-    keyname = window.localStorage.key("prov");
-    // keyname is now equal to "key"
-    prov = window.localStorage.getItem(keyname);
-
-    window.location.href="interna.html";
 }
 function get_random_color()
 {
@@ -237,7 +138,7 @@ function termina(xq,v)
 
                     if(mes == v['compara_mes'] && dia > v['compara_dia'])
                     {
-                        $ht += '<div class="swiper-slide W257X112" style="height:133px !important; background-color:'+$col+' ">\
+                        $ht += '<div class="swiper-slide W257X112" id="'+v[$i]['id']+'" style="height:133px !important; background-color:'+$col+' ">\
                                     <div class="floatLeft overflowHidden contenedorImagenMini miniImagenFiesta">\
                                         <img src="http://www.reiatsu.com.ar/clientes/frizze/facebook/fiestas_frizze/'+v[$i]['imagen']+'" class="floatLeft" style="width:60px;" />\
                                         <div class="floatLeft" style=" width:120px;text-align:center;font-size:0.8em !important">'+v[$i]['fecha']+'</div>\
@@ -246,14 +147,14 @@ function termina(xq,v)
                                         <p class="floatLeft nombreDelBoliche futura w100" style="margin-bottom:5px !important;"><strong>'+v[$i]['titulo']+'</strong></p>\
                                         <p class="floatLeft direccionDelBoliche futura" style="margin-top:8px;">'+v[$i]['dir_boliche']+'</p>\
                                         <p class="floatLeft provinciaDelBoliche futura" style="clear:both;">'+v[$i]['barrio']+'</p>\
-                                        <p class="floatLeft botonVerMas icon add" id="'+v[$i]['id']+'">ver info</p>\
+                                        <p class="floatLeft botonVerMas icon add">ver info</p>\
                                     </div>\
                                 </div>';
                             $j++;
                     }
                     else if( mes > v['compara_mes'] )
                     {
-                        $ht += '<div class="swiper-slide W257X112" style="height:133px !important; background-color:'+$col+' ">\
+                        $ht += '<div class="swiper-slide W257X112" id="'+v[$i]['id']+'" style="height:133px !important; background-color:'+$col+' ">\
                                     <div class="floatLeft overflowHidden contenedorImagenMini miniImagenFiesta">\
                                         <img src="http://www.reiatsu.com.ar/clientes/frizze/facebook/fiestas_frizze/'+v[$i]['imagen']+'" class="floatLeft" style="width:60px;" />\
                                         <div class="floatLeft" style=" width:120px;text-align:center;font-size:0.8em !important">'+v[$i]['fecha']+'</div>\
@@ -262,7 +163,7 @@ function termina(xq,v)
                                         <p class="floatLeft nombreDelBoliche futura w100" style="margin-bottom:5px !important;"><strong>'+v[$i]['titulo']+'</strong></p>\
                                         <p class="floatLeft direccionDelBoliche futura" style="margin-top:8px;">'+v[$i]['dir_boliche']+'</p>\
                                         <p class="floatLeft provinciaDelBoliche futura" style="clear:both;">'+v[$i]['barrio']+'</p>\
-                                        <p class="floatLeft botonVerMas icon add" id="'+v[$i]['id']+'">ver info</p>\
+                                        <p class="floatLeft botonVerMas icon add">ver info</p>\
                                     </div>\
                                 </div>';
                             $j++;
@@ -302,10 +203,18 @@ function termina(xq,v)
             $(".cargador").remove();
 
             $(".botonVerMas").click(function(){
-                $("#cargaPresentes").append($cargador);
+                /*$("#cargaPresentes").append($cargador);
                 id = $(this).attr("id");
-                muestraEvento(id,'eventosactivos.php');
+                muestraEvento(id,'eventosactivos.php');*/
             });
+
+            $(".W257X112").on( "swiperight", function() {
+                $(".acomodaAlto").css("-webkit-transform","translate3d(0px, 0px, 0px)");
+                $(this).css("overflow","hidden").append($cargador);
+                id = $(this).attr("id");
+                muestraEvento(id,'eventosactivos.php'); 
+            });
+            
             cargaSlides();
         }   
     }

@@ -25,7 +25,6 @@ $(document).ready(function(){
 	$("form[name=cargaInicio]").submit(function(a){
             a.preventDefault();
             id = $("select[name=cambiaProvincia]").val();
-            alerg(id);
             if(id != "-" )
             	provContDonde(id,"0");
             else
@@ -33,6 +32,95 @@ $(document).ready(function(){
     });
     $("#cargaPresentes").html($cargador);
 });
+function provContDonde(id,p)
+    {
+        switch(id)
+        {
+            case "0":
+                //Buenos aires
+                prov = "Buenos Aires";
+            break;
+            case 3:
+                prov = "Cordoba";
+            break;
+            case 2:
+                prov = "Entre Rios";
+            break;
+            case 12:
+                prov = "Jujuy";
+            break;
+            case 16:
+                prov = "Mendoza";
+            break;
+            case 17:
+                prov = "Neuquen";
+            break;
+            case 10:
+                prov = "Salta";
+            break;
+            case 15:
+                prov = "San Juan";
+            break;
+            case 20:
+                prov = "Santa Cruz";
+            break;
+            case 4:
+                prov = "Santa Fe";
+            break;
+            case 9:
+                prov = "Santiago del Estero";
+            break;
+            case 11:
+                prov = "Tucuman";
+            break;
+            case 12:
+                prov = "Jujuy";
+            break;
+            case 8:
+                prov = "Catamarca";
+            break;
+            case 14:
+                prov = "Chaco";
+            break;
+            case 13:
+                prov = "Formosa";
+            break;
+            case 5:
+                prov = "Corrientes";
+            break;
+            case 6:
+                prov = "Misiones";
+            break;
+            case 7:
+                prov = "La Rioja";
+            break;
+            case 1:
+                prov = "San Luis";
+            break;
+            case 23:
+                prov = "La Pampa";
+            break;
+            case 18:
+                prov = "Rio Negro";
+            break;
+            case 21:
+                prov = "Tierra del Fuego";
+            break;
+            case 19:
+                prov = "Chubut";
+            break;
+            default:
+                prov = "no disponible";
+            break;
+        }
+        
+        window.localStorage.setItem("prov", prov);
+        keyname = window.localStorage.key("prov");
+        // keyname is now equal to "key"
+        prov = window.localStorage.getItem(keyname);
+        
+        window.location.href="interna.html";
+    }
 function funcionesDeCarga()
 {
 	$w = parseInt($(window).width());
