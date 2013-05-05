@@ -236,13 +236,13 @@ function termina(xq,v)
             $ht += '<div class="contenedor floatLeft">\
                         <div class="titulo"> \
                             <strong>'+v[0]['titulo']+'</strong> (<small style="font-size:16px; color:#cdcdcd"> '+v[0]['fecha']+' </small>)\
-                            <img src="template/fondo/bandera.png" style="width: 50px; margin-right:10px !important;float: right; margin-top: -17px !important;" />\
+                            <img src="template/fondo/bandera.png" style="width: 50px; margin-right:3px !important;float: right; margin-top: -17px !important;" />\
                         </div>\
                         <div class="imagen">\
                             <img src="https://maps.googleapis.com/maps/api/staticmap?center='+v[0]['dir_boliche']+', '+v[0]['barrio']+', '+v[0]['provincia']+', Argentina&zoom=16&size='+parseInt($(window).width())+'x200&markers='+v[0]['dir_boliche']+', '+v[0]['barrio']+', '+v[0]['provincia']+'|&sensor=false" width="'+parseInt($(window).width())+'" height="200" />\
                         </div>\
-                        <div class="dir" style="height: 53px; padding: 9px !important; padding-top: 20px !important;font-size:24px;">\
-                            <img src="template/fondo/pin.png" style="width: 50px; margin-right:20px !important;float: right; margin-top: -17px !important;" />'+v[0]['dir_boliche']+', '+v[0]['barrio']+'\
+                        <div class="dir" style="height: 53px; padding: 9px !important; padding-top: 20px !important;font-size:17px;">\
+                            <img src="template/fondo/pin.png" style="width: 50px; margin-right:3px !important;float: right; margin-top: -17px !important;" />'+v[0]['dir_boliche']+', '+v[0]['barrio']+'\
                         </div>\
                         <div class="texto" style="padding:12px !important;">'+v[0]['texto']+'</div>\
                    </div>';
