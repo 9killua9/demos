@@ -349,3 +349,4 @@ margin-left: -3px !important;
     overflow: auto;
     margin-bottom:20px;
 }
+.ui-loader-default{display: none !important;}
