@@ -224,6 +224,7 @@ function termina(xq,v)
                 muestraEvento(id,'eventosactivos.php'); 
             });
             
+            $("html, body").width(parseInt($(window).width())).height(parseInt($(window).height()));
             cargaSlides();
         }   
     }
