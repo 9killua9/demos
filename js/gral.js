@@ -208,6 +208,7 @@ function termina(xq,v)
             
             /*$("#cargaBoliViejos").html($htv);*/
             $("#cargaPresentes")
+                .css({height:parseInt($(window).height())+'px', 'overflow-x':'hidden', 'overflow-y':'auto', width:parseInt($(window).width())+3})
                 .html($ht)
                 .niceScroll({touchbehavior:true});
 
