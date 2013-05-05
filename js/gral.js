@@ -279,6 +279,7 @@ function termina(xq,v)
             $(".texto").height(tot-150);
             $(".texto").niceScroll({touchbehavior:true});
 
+            $(".nicescroll-rails, .nicescroll-rails div").css({'left': parseInt($(window).width())-12});
             $("#muestraContenido").on( "swipeleft", function() {
                     $("#muestraRedSocial").css("-webkit-transform","translate3d(0px, -5em, 0px)");
                     

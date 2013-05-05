@@ -138,8 +138,7 @@ function funcionesDeCarga()
     cargaEventosHome(prov);
 
     $(window).bind("orientationchange", function(event){        
-        if (event.orientation == "portrait")
-            alert("port");
+
             
       });
 }
