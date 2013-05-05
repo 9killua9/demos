@@ -253,7 +253,7 @@ function termina(xq,v)
                         <div class="dir" style="height: 53px; padding: 9px !important; padding-top: 20px !important;font-size:17px;">\
                             <img src="template/fondo/pin.png" style="width: 50px; margin-right:3px !important;float: right; margin-top: -17px !important;" />'+v[0]['dir_boliche']+', '+v[0]['barrio']+'\
                         </div>\
-                        <div class="texto" style="padding:12px !important;">'+v[0]['texto']+'</div>\
+                        <div class="texto" style="padding:2px !important;">'+v[0]['texto']+'</div>\
                    </div>\
 \
                     <div class="swiper-slide red-slide overflowHidden" id="muestraRedSocial" style="width:'+parseInt($(window).width())+'px">\
@@ -277,9 +277,9 @@ function termina(xq,v)
             sum = parseInt($(".titulo").height()) + parseInt($(".imagen").height()) + parseInt($(".dir").height());
             tot = parseInt($(window).height())-sum;
             $(".texto").height(tot-150);
-            $(".texto").niceScroll({touchbehavior:true});
+            $(".texto").niceScroll({touchbehavior:true}).getNiceScroll().hide();
 
-            $(".nicescroll-rails, .nicescroll-rails div").css({'left': parseInt($(window).width())-12});
+            $(".nicescroll-rails, .nicescroll-rails div").css({left: parseInt($(window).width())-12});
             $("#muestraContenido").on( "swipeleft", function() {
                     $("#muestraRedSocial").css("-webkit-transform","translate3d(0px, -5em, 0px)");
                     
