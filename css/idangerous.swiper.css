@@ -236,19 +236,19 @@ body{height: 100% !important; margin:0px; background:url("../template/fondo/fond
 
 .botonVerMas.icon:before {
     content: "";
-    position: relative; 
-    top: 1px; 
-    float:left;
-    width: 12px; 
-    height: 12px; 
-    margin: 0 0.75em 0 -0.25em; 
-    background: url(gh-icons.png) 0 99px no-repeat;
+    position: relative;
+    top: 1px;
+    float: left;
+    width: 24px;
+    height: 16px;
+    margin: 0 0.75em 0 -0.65em;
+    background: url(gh-icons.png) 0 -288px no-repeat;
 }
 
 .botonVerMas.add.icon:before { background-position: 0 -288px; }
 .botonVerMas.add.icon:hover:before,
 .botonVerMas.add.icon:focus:before,
-.botonVerMas.add.icon:active:before { background-position: -12px -288px; }
+.botonVerMas.add.icon:active:before { background-position: 0px -288px; }
 .red-slide{background: transparent !important;}
 .header{
 	font-size: 22px;
@@ -343,3 +343,11 @@ margin-left: -3px !important;
     padding: 10px !important
 }
 .imagen img{-webkit-border-radius: 7px}
+.texto {
+    padding: 5%;
+    height: 173px;
+    width: 90%;
+    border: 2px solid #00F;
+    overflow: auto;
+  margin-bottom:20px;
+}

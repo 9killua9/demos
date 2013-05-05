@@ -5,7 +5,16 @@
 $url     = 'http://www.reiatsu.com.ar/phonegap/fiestas_frizze/php/ajax.php';
 $urlFbk  = 'php/facebook/ajax.php';
 $nImagen = 0;
-$cargador = '<div class="positionAbsolute aja overflowHidden" style=" height:134px !important; background:url(template/fondo/pattern_40.gif) repeat scroll 0 0 transparent; opacity:.9; z-index:900; width:'+parseInt($(window).width())+'px;">\
+$cargador1 = '<div class="positionAbsolute aja cargador overflowHidden" style=" height:134px !important; background:url(template/fondo/pattern_40.gif) repeat scroll 0 0 transparent; opacity:.9; z-index:900; width:'+parseInt($(window).width())+'px;">\
+                <div class="container" style="margin-top:27px !important;">\
+                    <div class="content">\
+                    <div class="ball"></div>\
+                    <div class="ball1"></div>\
+                    </div>\
+                </div>\
+            </div>';
+
+$cargador = '<div class="positionAbsolute aja cargador overflowHidden" style=" height:'+parseInt($(window).height())+'px !important; background:url(template/fondo/pattern_40.gif) repeat scroll 0 0 transparent; opacity:.9; z-index:900; width:'+parseInt($(window).width())+'px;">\
                 <div class="container" style="margin-top:27px !important;">\
                     <div class="content">\
                     <div class="ball"></div>\
@@ -147,7 +156,7 @@ function termina(xq,v)
                                         <p class="floatLeft nombreDelBoliche futura w100" style="margin-bottom:5px !important;"><strong>'+v[$i]['titulo']+'</strong></p>\
                                         <p class="floatLeft direccionDelBoliche futura" style="margin-top:8px;">'+v[$i]['dir_boliche']+'</p>\
                                         <p class="floatLeft provinciaDelBoliche futura" style="clear:both;">'+v[$i]['barrio']+'</p>\
-                                        <p class="floatLeft botonVerMas icon add">ver info</p>\
+                                        <p class="floatLeft botonVerMas icon add">[ + info]</p>\
                                     </div>\
                                 </div>';
                             $j++;
@@ -163,7 +172,7 @@ function termina(xq,v)
                                         <p class="floatLeft nombreDelBoliche futura w100" style="margin-bottom:5px !important;"><strong>'+v[$i]['titulo']+'</strong></p>\
                                         <p class="floatLeft direccionDelBoliche futura" style="margin-top:8px;">'+v[$i]['dir_boliche']+'</p>\
                                         <p class="floatLeft provinciaDelBoliche futura" style="clear:both;">'+v[$i]['barrio']+'</p>\
-                                        <p class="floatLeft botonVerMas icon add">ver info</p>\
+                                        <p class="floatLeft botonVerMas icon add">[ + info]</p>\
                                     </div>\
                                 </div>';
                             $j++;
@@ -210,7 +219,7 @@ function termina(xq,v)
 
             $(".W257X112").on( "swiperight", function() {
                 $(".acomodaAlto").css("-webkit-transform","translate3d(0px, 0px, 0px)");
-                $(this).css("overflow","hidden").append($cargador);
+                $(this).css("overflow","hidden").append($cargador1);
                 id = $(this).attr("id");
                 muestraEvento(id,'eventosactivos.php'); 
             });
@@ -227,7 +236,7 @@ function termina(xq,v)
             $ht += '<div class="contenedor floatLeft">\
                         <div class="titulo"> \
                             <strong>'+v[0]['titulo']+'</strong> (<small style="font-size:16px; color:#cdcdcd"> '+v[0]['fecha']+' </small>)\
-                            <img src="template/fondo/bandera.png" style="width: 50px; margin-right:20px !important;float: right; margin-top: -17px !important;" />\
+                            <img src="template/fondo/bandera.png" style="width: 50px; margin-right:10px !important;float: right; margin-top: -17px !important;" />\
                         </div>\
                         <div class="imagen">\
                             <img src="https://maps.googleapis.com/maps/api/staticmap?center='+v[0]['dir_boliche']+', '+v[0]['barrio']+', '+v[0]['provincia']+', Argentina&zoom=16&size='+parseInt($(window).width())+'x200&markers='+v[0]['dir_boliche']+', '+v[0]['barrio']+', '+v[0]['provincia']+'|&sensor=false" width="'+parseInt($(window).width())+'" height="200" />\
@@ -241,6 +250,12 @@ function termina(xq,v)
             $("#muestraContenido").html($ht);
             $(".acomodaAlto").css("-webkit-transform","translate3d(-"+($w)+"px, 0px, 0px)");
             $(".cargador").remove();
+
+            sum = parseInt($(".titulo").height()) + parseInt($(".imagen").height()) + parseInt($(".dir").height());
+            tot = parseInt($(window).height())-sum;
+            console.log(tot)
+            $(".texto").height(tot);
+            $(".texto").niceScroll({touchbehavior:true});
         }
     }
     else if( xq == "traeInfoPas" )
@@ -263,6 +278,8 @@ function termina(xq,v)
             $("#dirBol,#address").html(v[0]['dir_boliche']);
             $(".eve").attr("href",$que);
             $("#cargaFotelis").html($im);
+
+            $("#textoBol").niceScroll({touchbehavior:true});
         }   
     }
     else if( xq == "traeInfoParaElBuscador" )
