@@ -345,7 +345,7 @@ margin-left: -3px !important;
 .imagen img{-webkit-border-radius: 7px}
 .texto {
     padding: 5%;
-    width: 90%;
+    width: 99%;
     overflow-y: auto;
     overflow-x: hidden;
     margin-bottom:20px;
@@ -376,3 +376,4 @@ margin-left: -3px !important;
     -webkit-transition-duration:0.3s;
     -webkit-transform:translate3d(0px,5em,0);
     background:url('../template/fondo/pattern_40.gif') repeat scroll 0 0 transparent !important;}
+.nicescroll-rails, .nicescroll-rails div{ left:-3px !important;}
