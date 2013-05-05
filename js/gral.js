@@ -253,7 +253,7 @@ function termina(xq,v)
 
             sum = parseInt($(".titulo").height()) + parseInt($(".imagen").height()) + parseInt($(".dir").height());
             tot = parseInt($(window).height())-sum;
-            $(".texto").height(tot-80);
+            $(".texto").height(tot-150);
             $(".texto").niceScroll({touchbehavior:true});
         }
     }
