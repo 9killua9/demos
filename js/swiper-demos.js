@@ -127,7 +127,7 @@ function funcionesDeCarga()
 	$h = parseInt($(window).height());
 	
 	$(".acomodaAlto, .swiper-n3, .red-slide, .swiper-n1, .swiper-n2").height($h);
-    $('.swiper-nested1').width($w*3);
+    $('.swiper-nested1,.acomodaAlto').width($w*2);
     $("#cargaPresentes, #muestraInicial,#muestraContenido,#muestraRedSocial").width($w)
 	$(".pagination-nested1").attr('style',"margin-top:"+($h-30)+'px !important;');
 
@@ -138,8 +138,9 @@ function funcionesDeCarga()
     cargaEventosHome(prov);
 
     $(window).bind("orientationchange", function(event){        
-        if (event.orientation)      
-          alert("Me han reorientado a " + event.orientation);
+        if (event.orientation == "portrait")
+            alert("port");
+            
       });
 }
 
