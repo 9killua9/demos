@@ -151,11 +151,11 @@ function cargaSlides()
 		slidesPerSlide : 2,
 		mode: 'vertical'
 	});*/
-	var swiperN3 = $('.swiper-n3').swiper({
+	/*var swiperN3 = $('.swiper-n3').swiper({
 		pagination : '.pagination-n3',
 		slidesPerSlide : 3,
 		mode: 'vertical'
-	});
+	});*/
 	/*var swiperN4 = $('.swiper-n4').swiper({
 		pagination : '.pagination-n4',
 		slidesPerSlide : 2,

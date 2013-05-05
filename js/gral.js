@@ -207,15 +207,12 @@ function termina(xq,v)
             } // termina bucle
             
             /*$("#cargaBoliViejos").html($htv);*/
-            $("#cargaPresentes").html($ht);
-            
+            $("#cargaPresentes")
+                .html($ht)
+                .niceScroll({touchbehavior:true});
+
             $(".cargador").remove();
 
-            $(".botonVerMas").click(function(){
-                /*$("#cargaPresentes").append($cargador);
-                id = $(this).attr("id");
-                muestraEvento(id,'eventosactivos.php');*/
-            });
 
             $(".W257X112").on( "swiperight", function() {
                 $(".acomodaAlto").css("-webkit-transform","translate3d(0px, 0px, 0px)");
