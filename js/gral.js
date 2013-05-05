@@ -277,7 +277,7 @@ function termina(xq,v)
             sum = parseInt($(".titulo").height()) + parseInt($(".imagen").height()) + parseInt($(".dir").height());
             tot = parseInt($(window).height())-sum;
             $(".texto").height(tot-150);
-            $(".texto").niceScroll({touchbehavior:true}).getNiceScroll().hide();
+            $(".texto").niceScroll({touchbehavior:true});
 
             $(".nicescroll-rails, .nicescroll-rails div").css({left: parseInt($(window).width())-12});
             $("#muestraContenido").on( "swipeleft", function() {
