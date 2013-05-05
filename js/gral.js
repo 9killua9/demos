@@ -84,6 +84,16 @@ function get_random_color()
   var rint = Math.round(0xffffff * Math.random());
   return 'rgba(' + (rint >> 21) + ',' + (rint >> 4 & 255) + ',' + (rint & 255) + ', 0.3)';
 }
+ function validar_email(valor)
+{
+    // creamos nuestra regla con expresiones regulares.
+    var filter = /[\w-\.]{3,}@([\w-]{2,}\.)*([\w-]{2,}\.)[\w-]{2,4}/;
+    // utilizamos test para comprobar si el parametro valor cumple la regla
+    if(filter.test(valor))
+        return true;
+    else
+        return false;
+}
 /* Funciones de el framework para leer los resultados del ajax
 =================================================================== */
 function termina(xq,v)
@@ -147,7 +157,7 @@ function termina(xq,v)
 
                     if(mes == v['compara_mes'] && dia > v['compara_dia'])
                     {
-                        $ht += '<div class="swiper-slide W257X112" id="'+v[$i]['id']+'" style="height:133px !important; background-color:'+$col+' ">\
+                        $ht += '<div class="swiper-slide W257X112" id="'+v[$i]['id']+'" style="width:'+parseInt($(window).width())+'px; height:133px !important; background-color:'+$col+' ">\
                                     <div class="floatLeft overflowHidden contenedorImagenMini miniImagenFiesta">\
                                         <img src="http://www.reiatsu.com.ar/clientes/frizze/facebook/fiestas_frizze/'+v[$i]['imagen']+'" class="floatLeft" style="width:60px;" />\
                                         <div class="floatLeft" style=" width:120px;text-align:center;font-size:0.8em !important">'+v[$i]['fecha']+'</div>\
@@ -163,7 +173,7 @@ function termina(xq,v)
                     }
                     else if( mes > v['compara_mes'] )
                     {
-                        $ht += '<div class="swiper-slide W257X112" id="'+v[$i]['id']+'" style="height:133px !important; background-color:'+$col+' ">\
+                        $ht += '<div class="swiper-slide W257X112" id="'+v[$i]['id']+'" style="width:'+parseInt($(window).width())+'px; height:133px !important; background-color:'+$col+' ">\
                                     <div class="floatLeft overflowHidden contenedorImagenMini miniImagenFiesta">\
                                         <img src="http://www.reiatsu.com.ar/clientes/frizze/facebook/fiestas_frizze/'+v[$i]['imagen']+'" class="floatLeft" style="width:60px;" />\
                                         <div class="floatLeft" style=" width:120px;text-align:center;font-size:0.8em !important">'+v[$i]['fecha']+'</div>\
@@ -207,15 +217,15 @@ function termina(xq,v)
             } // termina bucle
             
             /*$("#cargaBoliViejos").html($htv);*/
-            $("#cargaPresentes")
-                .css({height:parseInt($(window).height())+'px', 'overflow-x':'hidden', 'overflow-y':'auto', width:parseInt($(window).width())+3})
-                .html($ht)
-                .niceScroll({touchbehavior:true});
-
+            $("#cargaPresentes").html($ht);
             $(".cargador").remove();
 
-
             $(".W257X112").on( "swiperight", function() {
+                $(".acomodaAlto").css("-webkit-transform","translate3d(0px, 0px, 0px)");
+                $(this).css("overflow","hidden").append($cargador1);
+                id = $(this).attr("id");
+                muestraEvento(id,'eventosactivos.php'); 
+            }).on( "swipeleft", function() {
                 $(".acomodaAlto").css("-webkit-transform","translate3d(0px, 0px, 0px)");
                 $(this).css("overflow","hidden").append($cargador1);
                 id = $(this).attr("id");
@@ -244,7 +254,21 @@ function termina(xq,v)
                             <img src="template/fondo/pin.png" style="width: 50px; margin-right:3px !important;float: right; margin-top: -17px !important;" />'+v[0]['dir_boliche']+', '+v[0]['barrio']+'\
                         </div>\
                         <div class="texto" style="padding:12px !important;">'+v[0]['texto']+'</div>\
-                   </div>';
+                   </div>\
+\
+                    <div class="swiper-slide red-slide overflowHidden" id="muestraRedSocial" style="width:'+parseInt($(window).width())+'px">\
+                      <div class="header">CERRAR</div><div class="headerSombra"></div>\
+                      <div class="w100">\
+                        <div class="clearBoth"></div>\
+                        <form name="guardaAsociado">\
+                          <input type="hidden" name="id" value="'+v[0]['id']+'" />\
+                          <div class="futura floatLeft avisoEmail">Ingres&aacute; tu email para tener un recordatorio del evento.</div>\
+                          <input type="text" name="email" class="aviso button1" placeholder="example@example.com" value="" />\
+                          <div class="clearBoth"></div>\
+                          <!-- <p class="floatLeft botonVerMas icon addFbc modifications" onclick="postFace"></p>--> <input type="submit" class="floatRight botonVerMas1 submitEnviar button1" value=" ENVIAR " />\
+                        </form>\
+                      </div>\
+                  </div>';
 
             $("#muestraContenido").html($ht);
             $(".acomodaAlto").css("-webkit-transform","translate3d(-"+($w)+"px, 0px, 0px)");
@@ -254,136 +278,40 @@ function termina(xq,v)
             tot = parseInt($(window).height())-sum;
             $(".texto").height(tot-150);
             $(".texto").niceScroll({touchbehavior:true});
+
+            $("#muestraContenido").on( "swipeleft", function() {
+                    $("#muestraRedSocial").css("-webkit-transform","translate3d(0px, -5em, 0px)");
+                    
+                    $("form[name=guardaAsociado]").submit(function(a){
+                        a.preventDefault();
+                        // creamos nuestra regla con expresiones regulares.
+                        var filter = /[\w-\.]{3,}@([\w-]{2,}\.)*([\w-]{2,}\.)[\w-]{2,4}/;
+                        
+                        if($("form[name=guardaAsociado] input[name=email]").val() != '' )
+                            if( validar_email($("form[name=guardaAsociado] input[name=email]").val()) )
+                            {                
+                                $data = 'h=cargaEmail&'+$("form[name=guardaAsociado]").serialize();
+                                lmPost($url,$data,"cargaEmail");
+                            }
+                            else
+                            {   
+                                alert("E-mail incorrecto");
+                            }                    
+                        else
+                        {
+                            alert("Ingrese su email");
+                        }        
+                    });
+            }).on( "swiperight", function() {
+                    $(".acomodaAlto").css("-webkit-transform","translate3d(0px, 0px, 0px)");
+            });
+
+            $("#muestraRedSocial .header,#muestraRedSocial .headerSombra").on('taphold',function(){
+                    $("#muestraRedSocial").css("-webkit-transform","translate3d(0px, 5em, 0px)");
+            }).click(function(){
+                    $("#muestraRedSocial").css("-webkit-transform","translate3d(0px, 5em, 0px)");
+            })
         }
-    }
-    else if( xq == "traeInfoPas" )
-    {
-        if(v != null)
-        {
-            if(v[0]['fotos'] != null && v[0]['fotos'] != "" && v[0]['fotos'] != undefined)
-                var $im = '<img src="'+v[0]['fotos']+'" class="fotoFacebook" style="width:280px; height:auto; border-radius:12px;margin-top:-27px;"/>'
-            else
-                var $im = 'Proximamente';
-
-            if(v[0]['id_galeria'] != "" && v[0]['id_galeria'] != null && v[0]['id_galeria'] != undefined)
-                $que = v[0]['id_galeria'];
-            else
-                que = "#";
-            $("#imgBol").attr("src",v[0]['imagen']+'?v=1');
-            $("#textoBol").html(v[0]['texto']);
-            $("#tituBol").html(v[0]['titulo']);
-            $("#fechaBol").html(v[0]['fecha']);
-            $("#dirBol,#address").html(v[0]['dir_boliche']);
-            $(".eve").attr("href",$que);
-            $("#cargaFotelis").html($im);
-
-            $("#textoBol").niceScroll({touchbehavior:true});
-        }   
-    }
-    else if( xq == "traeInfoParaElBuscador" )
-    {
-        if(v != null)
-        {
-            $i                  = 0;
-        $j                  = 0;
-        $b                  = 0;
-        $ht                 = '';
-        $htv                = '';
-        fechaEventoActual   = '';
-
-            for($i=0; $i < v['vueltas']; $i++)
-            {
-                fechaEventoActual   = v[$i]['fecha'].split(".");
-                var mes             = parseInt(fechaEventoActual[1]);
-                var dia             = parseInt(fechaEventoActual[0]);
-                if(mes >= v['compara_mes'])
-                {
-                    if(mes == v['compara_mes'] && dia > v['compara_dia'])
-                    {
-                        $ht += '<div class="floatLeft W257X112 repEstilo" id="'+v[$i]['id']+'">\
-                                <div class="floatLeft overflowHidden contenedorImagenMini miniImagenFiesta">\
-                                    <img src="'+v[$i]['imagen']+'" class="floatLeft" />\
-                                </div>\
-                                <div class="floatLeft w180">\
-                                    <p class="floatLeft diaDeLaSemanaFiesta futura w100">'+v[$i]['fecha']+'</p>\
-                                    <p class="floatLeft nombreDelBoliche futura w100">'+v[$i]['titulo']+'</p>\
-                                    <p class="floatLeft direccionDelBoliche futura">'+v[$i]['dir_boliche']+'</p>\
-                                    <div class="clearBoth"></div>\
-                                    <p class="floatLeft provinciaDelBoliche futura">'+v[$i]['barrio']+'</p>\
-                                </div>\
-                            </div>';
-                            $j++;
-                    }
-                    else if( mes > v['compara_mes'] )
-                    {
-                        $ht += '<div class="floatLeft W257X112 repEstilo" id="'+v[$i]['id']+'">\
-                                <div class="floatLeft overflowHidden contenedorImagenMini miniImagenFiesta">\
-                                    <img src="'+v[$i]['imagen']+'" class="floatLeft" />\
-                                </div>\
-                                <div class="floatLeft w180">\
-                                    <p class="floatLeft diaDeLaSemanaFiesta futura w100">'+v[$i]['fecha']+'</p>\
-                                    <p class="floatLeft nombreDelBoliche futura w100">'+v[$i]['titulo']+'</p>\
-                                    <p class="floatLeft direccionDelBoliche futura">'+v[$i]['dir_boliche']+'</p>\
-                                    <div class="clearBoth"></div>\
-                                    <p class="floatLeft provinciaDelBoliche futura">'+v[$i]['barrio']+'</p>\
-                                </div>\
-                            </div>';
-                            $j++;
-                    }
-                    else
-                    {
-                        $htv += '<div class="floatLeft W257X112 repEstilo" id="'+v[$i]['id']+'">\
-                                <div class="floatLeft overflowHidden contenedorImagenMini miniImagenFiesta">\
-                                    <img src="'+v[$i]['imagen']+'" class="floatLeft" />\
-                                </div>\
-                                <div class="floatLeft w180">\
-                                    <p class="floatLeft diaDeLaSemanaFiesta futura w100">'+v[$i]['fecha']+'</p>\
-                                    <p class="floatLeft nombreDelBoliche futura w100">'+v[$i]['titulo']+'</p>\
-                                    <p class="floatLeft direccionDelBoliche futura">'+v[$i]['dir_boliche']+'</p>\
-                                    <div class="clearBoth"></div>\
-                                    <p class="floatLeft provinciaDelBoliche futura">'+v[$i]['barrio']+'</p>\
-                                </div>\
-                            </div>';
-                                $b++;
-
-                    } //Si el evento que compara es de este mes pero ya paso
-                }
-                else
-                {
-                    $htv += '<div class="floatLeft W257X112 repEstilo" id="'+v[$i]['id']+'">\
-                                <div class="floatLeft overflowHidden contenedorImagenMini miniImagenFiesta">\
-                                    <img src="'+v[$i]['imagen']+'" class="floatLeft" />\
-                                </div>\
-                                <div class="floatLeft w180">\
-                                    <p class="floatLeft diaDeLaSemanaFiesta futura w100">'+v[$i]['fecha']+'</p>\
-                                    <p class="floatLeft nombreDelBoliche futura w100">'+v[$i]['titulo']+'</p>\
-                                    <p class="floatLeft direccionDelBoliche futura">'+v[$i]['dir_boliche']+'</p>\
-                                    <div class="clearBoth"></div>\
-                                    <p class="floatLeft provinciaDelBoliche futura">'+v[$i]['barrio']+'</p>\
-                                </div>\
-                            </div>';
-                                $b++;
-                } //Si el evento que compara es del mes pasado
-
-            } // termina bucle
-            
-            
-            $(".cajitaEventoBoliche").click(function(){
-                id = $(this).attr("id");
-                muestraEvento(id,'eventospasados.php');
-            });
-
-            $(".W257X112").click(function(){
-                id = $(this).attr("id");
-                muestraEvento(id,'eventosactivos.php');
-            });
-
-            $(".muestraElResultadoQueTraeElBuscador").html($ht);
-            $(".muestraElResultadoQueTraeElBuscadorV").html($htv);
-        }   
-           
-            //$("#imgBol").attr("src",v[0]['imagen']+'?v=1');            
-
     }
     else if( xq == "donde" )
     {
@@ -394,8 +322,8 @@ function termina(xq,v)
     }
     else if( xq == "cargaEmail" )
     {
-        $(".campoAvisoEmailVacio, .campoAvisoEmailIncorrecto").hide();
-        $(".asociateAlEvento").append('<div class="floatLeft campoAvisoEmailIncorrecto"><p class="floatLeft">'+v['aviso']+'</p></div>');
+       $("#muestraRedSocial").css("-webkit-transform","translate3d(0px, 5em, 0px)"); 
+       alert(v['aviso']);
     }
 
 }

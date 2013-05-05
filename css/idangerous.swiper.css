@@ -124,28 +124,28 @@ body{height: 100% !important; margin:0px; background:url("../template/fondo/fond
 	position:relative;
 	width:100%;
 	-webkit-transition-property:-webkit-transform, left, top;
-	-webkit-transition-duration:0s;
+	-webkit-transition-duration:0.4s;
 	-webkit-transform:translate3d(0px,0,0);
 	-webkit-transition-timing-function:ease;
 	
 	-moz-transition-property:-moz-transform, left, top;
-	-moz-transition-duration:0s;
+	-moz-transition-duration:0.4s;
 	-moz-transform:translate3d(0px,0,0);
 	-moz-transition-timing-function:ease;
 	
 	-o-transition-property:-o-transform, left, top;
-	-o-transition-duration:0s;
+	-o-transition-duration:0.4s;
 	-o-transform:translate3d(0px,0,0);
 	-o-transition-timing-function:ease;
 	-o-transform:translate(0px,0px);
 	
 	-ms-transition-property:-ms-transform, left, top;
-	-ms-transition-duration:0s;
+	-ms-transition-duration:0.4s;
 	-ms-transform:translate3d(0px,0,0);
 	-ms-transition-timing-function:ease;
 	
 	transition-property:transform, left, top;
-	transition-duration:0s;
+	transition-duration:0.4s;
 	transform:translate3d(0px,0,0);
 	transition-timing-function:ease;
 	
@@ -351,3 +351,28 @@ margin-left: -3px !important;
     margin-bottom:20px;
 }
 .ui-loader-default{display: none !important;}
+#muestraRedSocial *{ line-height: normal !important;}
+.avisoEmail{font-size: .3em; width:100%;text-align: center; font-family: tahoma; margin-top: 0.6em !important;}
+.aviso{background-color: #ffffff; color: #000000 !important; padding: 8px !important; width: 82%; text-align: center; font-size: 18px; border-radius: 5px; border: none;}
+.ui-btn-inner{display: none;}
+.submitEnviar{margin-right: 1.7em !important; padding: .5em 1.5em !important; font-size: 14px;}
+.modifications{margin-left: 2em !important; padding: .5em 1em !important;}
+.modifications{
+    border-color: #3072b3 !important;
+    border-bottom-color: #2a65a0 !important;
+    text-decoration: none !important; 
+    text-shadow: -1px -1px 0 rgba(0,0,0,0.3) !important; 
+    color: #fff !important; 
+    background-color: #3072b3 !important;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#599bdc), to(#3072b3)) !important;
+    background-image: -moz-linear-gradient(#599bdc, #3072b3) !important;
+    background-image: -o-linear-gradient(#599bdc, #3072b3) !important;
+    background-image: linear-gradient(#599bdc, #3072b3) !important;
+    border: 1px solid #ffffff !important;}
+
+.modifications.icon:before {content: ""; position: relative; top: 1px; float: left; width: 22px; height: 20px; margin: 0 0em 0 0em; background: url(gh-icons.png) 0 -154px no-repeat !important; }
+#muestraRedSocial{
+    -webkit-transition-property:-webkit-transform, left, top;
+    -webkit-transition-duration:0.3s;
+    -webkit-transform:translate3d(0px,5em,0);
+    background:url('../template/fondo/pattern_40.gif') repeat scroll 0 0 transparent !important;}
