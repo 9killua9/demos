@@ -346,7 +346,8 @@ margin-left: -3px !important;
 .texto {
     padding: 5%;
     width: 100%;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
     margin-bottom:20px;
 }
 .ui-loader-default{display: none !important;}
