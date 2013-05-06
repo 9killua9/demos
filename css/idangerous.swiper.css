@@ -344,11 +344,14 @@ margin-left: -3px !important;
 }
 .imagen img{-webkit-border-radius: 7px}
 .texto {
-    padding: 5%;
-    width: 99%;
+    width: 98%;
     overflow-y: auto;
     overflow-x: hidden;
     margin-bottom:20px;
+    padding-left: 7px !important;
+    outline: none;
+    cursor: -webkit-grab;
+    padding-right: 7px !important;
 }
 .ui-loader-default{display: none !important;}
 #muestraRedSocial *{ line-height: normal !important;}
@@ -377,3 +380,31 @@ margin-left: -3px !important;
     -webkit-transform:translate3d(0px,5em,0);
     background:url('../template/fondo/pattern_40.gif') repeat scroll 0 0 transparent !important;}
 .nicescroll-rails, .nicescroll-rails div{ left:-3px !important;}
+
+.footer{
+    margin-top: -2em !important;
+    position: relative;
+    z-index: 20;
+
+    font-size: 22px;
+    width:100% !important;
+    border: 1px solid #333;
+    background: #111;
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 0  -1px 1px #000 ;
+    height: 2em;
+    text-align: center;
+    padding-top: 8px !important;
+    background-image: -webkit-gradient(linear, left top, left bottom, from( #3c3c3c), to( #111 ));
+    background-image: -webkit-linear-gradient( #3c3c3c , #111 );
+    background-image: -moz-linear-gradient( #3c3c3c , #111 );
+    background-image: -ms-linear-gradient( #3c3c3c , #111 );
+    background-image: -o-linear-gradient( #3c3c3c , #111 );
+    background-image: linear-gradient( #3c3c3c , #111 );
+    line-height: normal !important;
+    font-family: Arial;
+}
+.bot1{width:30%;}
+.bot2{width:38%; border-left:1px outset #3b3b3b; border-right:1px inset #3b3b3b;margin-top: -3px !important;}
+.bot3{width:30%;}

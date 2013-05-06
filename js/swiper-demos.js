@@ -159,7 +159,7 @@ function cargaSlides()
 	});*/
 	var swiperN3 = $('.swiper-n3').swiper({
 		pagination : '.pagination-n3',
-		slidesPerSlide : 4,
+		slidesPerSlide : 3,
 		mode: 'vertical'
 	});
 	/*var swiperN4 = $('.swiper-n4').swiper({

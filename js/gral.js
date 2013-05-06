@@ -166,7 +166,7 @@ function termina(xq,v)
                                         <p class="floatLeft nombreDelBoliche futura w100" style="margin-bottom:5px !important;"><strong>'+v[$i]['titulo']+'</strong></p>\
                                         <p class="floatLeft direccionDelBoliche futura" style="margin-top:8px;">'+v[$i]['dir_boliche']+'</p>\
                                         <p class="floatLeft provinciaDelBoliche futura" style="clear:both;">'+v[$i]['barrio']+'</p>\
-                                        <p class="floatLeft botonVerMas icon add">[ + info]</p>\
+                                        <p class="floatLeft botonVerMas icon add">Deslize para ver m&aacute;s</p>\
                                     </div>\
                                 </div>';
                             $j++;
@@ -182,7 +182,7 @@ function termina(xq,v)
                                         <p class="floatLeft nombreDelBoliche futura w100" style="margin-bottom:5px !important;"><strong>'+v[$i]['titulo']+'</strong></p>\
                                         <p class="floatLeft direccionDelBoliche futura" style="margin-top:8px;">'+v[$i]['dir_boliche']+'</p>\
                                         <p class="floatLeft provinciaDelBoliche futura" style="clear:both;">'+v[$i]['barrio']+'</p>\
-                                        <p class="floatLeft botonVerMas icon add">[ + info]</p>\
+                                        <p class="floatLeft botonVerMas icon add">Deslize para ver m&aacute;s</p>\
                                     </div>\
                                 </div>';
                             $j++;
@@ -224,7 +224,7 @@ function termina(xq,v)
                 $(".acomodaAlto").css("-webkit-transform","translate3d(0px, 0px, 0px)");
                 $(this).css("overflow","hidden").append($cargador1);
                 id = $(this).attr("id");
-                muestraEvento(id,'eventosactivos.php'); 
+                muestraEvento(id,'eventosactivos.php');
             }).on( "swipeleft", function() {
                 $(".acomodaAlto").css("-webkit-transform","translate3d(0px, 0px, 0px)");
                 $(this).css("overflow","hidden").append($cargador1);
@@ -240,20 +240,20 @@ function termina(xq,v)
     {
         if(v != null)
        {    
+
+            $(".info1").css("margin-top","2em").hide();
+            $(".info2").css("margin-top","-2em").show();
+
             $w = parseInt($(window).width());
-            $ht = '<div class="header">VER M&Aacute;S INFO</div><div class="headerSombra"></div>';
+            $ht = '<div class="header">'+v[0]['titulo']+' - <small style="font-size:16px; color:#cdcdcd"> '+v[0]['fecha']+' </small></div><div class="headerSombra"></div>';
             $ht += '<div class="contenedor floatLeft">\
-                        <div class="titulo"> \
-                            <strong>'+v[0]['titulo']+'</strong> (<small style="font-size:16px; color:#cdcdcd"> '+v[0]['fecha']+' </small>)\
-                            <img src="template/fondo/bandera.png" style="width: 50px; margin-right:3px !important;float: right; margin-top: -17px !important;" />\
-                        </div>\
                         <div class="imagen">\
                             <img src="https://maps.googleapis.com/maps/api/staticmap?center='+v[0]['dir_boliche']+', '+v[0]['barrio']+', '+v[0]['provincia']+', Argentina&zoom=16&size='+parseInt($(window).width())+'x200&markers='+v[0]['dir_boliche']+', '+v[0]['barrio']+', '+v[0]['provincia']+'|&sensor=false" width="'+parseInt($(window).width())+'" height="200" />\
                         </div>\
-                        <div class="dir" style="height: 53px; padding: 9px !important; padding-top: 20px !important;font-size:17px;">\
-                            <img src="template/fondo/pin.png" style="width: 50px; margin-right:3px !important;float: right; margin-top: -17px !important;" />'+v[0]['dir_boliche']+', '+v[0]['barrio']+'\
+                        <div class="dir" style="height: 17px; padding: 10px !important; padding-top: 12px !important; font-size: 13px;">\
+                            <img src="template/fondo/pin.png" style="width: 34px; margin-right:3px !important;float: right; margin-top: -12px !important;" />'+v[0]['dir_boliche']+', '+v[0]['barrio']+'\
                         </div>\
-                        <div class="texto" style="padding:2px !important;">'+v[0]['texto']+'</div>\
+                        <div class="texto">'+v[0]['texto']+'</div>\
                    </div>\
 \
                     <div class="swiper-slide red-slide overflowHidden" id="muestraRedSocial" style="width:'+parseInt($(window).width())+'px">\
@@ -281,7 +281,7 @@ function termina(xq,v)
 
             $(".nicescroll-rails, .nicescroll-rails div").css({left: parseInt($(window).width())-12});
             $("#muestraContenido").on( "swipeleft", function() {
-                    $("#muestraRedSocial").css("-webkit-transform","translate3d(0px, -5em, 0px)");
+                    $("#muestraRedSocial").css("-webkit-transform","translate3d(0px, -4em, 0px)");
                     
                     $("form[name=guardaAsociado]").submit(function(a){
                         a.preventDefault();
@@ -305,8 +305,70 @@ function termina(xq,v)
                     });
             }).on( "swiperight", function() {
                     $(".acomodaAlto").css("-webkit-transform","translate3d(0px, 0px, 0px)");
+                    $(".info2").css("margin-top","2em").hide();
+                    $(".info1").css("margin-top","-2em").show();
+                    $("#muestraContenido").html("");
             });
 
+            $(".bot1").on('taphold',function(){
+                $(".acomodaAlto").css("-webkit-transform","translate3d(0px, 0px, 0px)");
+                $(".info2").css("margin-top","2em").hide();
+                $(".info1").css("margin-top","-2em").show();
+                $("#muestraContenido").html("");
+            }).click(function(){
+                $(".acomodaAlto").css("-webkit-transform","translate3d(0px, 0px, 0px)");
+                $(".info2").css("margin-top","2em").hide();
+                $(".info1").css("margin-top","-2em").show();
+                $("#muestraContenido").html("");
+            });
+            
+            $(".bot3").on('taphold',function(){
+                    $("#muestraRedSocial").css("-webkit-transform","translate3d(0px, -4em, 0px)");
+                    
+                    $("form[name=guardaAsociado]").submit(function(a){
+                        a.preventDefault();
+                        // creamos nuestra regla con expresiones regulares.
+                        var filter = /[\w-\.]{3,}@([\w-]{2,}\.)*([\w-]{2,}\.)[\w-]{2,4}/;
+                        
+                        if($("form[name=guardaAsociado] input[name=email]").val() != '' )
+                            if( validar_email($("form[name=guardaAsociado] input[name=email]").val()) )
+                            {                
+                                $data = 'h=cargaEmail&'+$("form[name=guardaAsociado]").serialize();
+                                lmPost($url,$data,"cargaEmail");
+                            }
+                            else
+                            {   
+                                alert("E-mail incorrecto");
+                            }                    
+                        else
+                        {
+                            alert("Ingrese su email");
+                        }        
+                    });
+            }).click(function(){
+                    $("#muestraRedSocial").css("-webkit-transform","translate3d(0px, -4em, 0px)");
+                    
+                    $("form[name=guardaAsociado]").submit(function(a){
+                        a.preventDefault();
+                        // creamos nuestra regla con expresiones regulares.
+                        var filter = /[\w-\.]{3,}@([\w-]{2,}\.)*([\w-]{2,}\.)[\w-]{2,4}/;
+                        
+                        if($("form[name=guardaAsociado] input[name=email]").val() != '' )
+                            if( validar_email($("form[name=guardaAsociado] input[name=email]").val()) )
+                            {                
+                                $data = 'h=cargaEmail&'+$("form[name=guardaAsociado]").serialize();
+                                lmPost($url,$data,"cargaEmail");
+                            }
+                            else
+                            {   
+                                alert("E-mail incorrecto");
+                            }                    
+                        else
+                        {
+                            alert("Ingrese su email");
+                        }        
+                    });
+            });
             $("#muestraRedSocial .header,#muestraRedSocial .headerSombra").on('taphold',function(){
                     $("#muestraRedSocial").css("-webkit-transform","translate3d(0px, 5em, 0px)");
             }).click(function(){
