@@ -250,8 +250,8 @@ function termina(xq,v)
                         <div class="imagen">\
                             <img src="https://maps.googleapis.com/maps/api/staticmap?center='+v[0]['dir_boliche']+', '+v[0]['barrio']+', '+v[0]['provincia']+', Argentina&zoom=16&size='+parseInt($(window).width())+'x200&markers='+v[0]['dir_boliche']+', '+v[0]['barrio']+', '+v[0]['provincia']+'|&sensor=false" width="'+parseInt($(window).width())+'" height="200" />\
                         </div>\
-                        <div class="dir" style="height: 17px; padding: 10px !important; padding-top: 12px !important; font-size: 13px;">\
-                            <img src="template/fondo/pin.png" style="width: 34px; margin-right:3px !important;float: right; margin-top: -12px !important;" />'+v[0]['dir_boliche']+', '+v[0]['barrio']+'\
+                        <div class="dir" style="height: 17px; padding: 10px !important; padding-top: 12px !important; font-size: 13px; font-weight: bold; color: #ffc000; margin-bottom: 1.3em !important; -webkit-box-shadow: -5px -6px 30px #ffc000;">\
+                            <img src="template/fondo/pin.png" style="width: 34px; margin-right:3px !important;float: right; margin-top: -9px !important;" />'+v[0]['dir_boliche']+', '+v[0]['barrio']+'\
                         </div>\
                         <div class="texto">'+v[0]['texto']+'</div>\
                    </div>\

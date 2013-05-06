@@ -138,9 +138,13 @@ function funcionesDeCarga()
     cargaEventosHome(prov);
 
     $(window).bind("orientationchange", function(event){        
+    });
 
-            
-      });
+    $(".bot2").on('taphold',function(){
+               alert("Frizzé pone todas las fiestas en tu mano.\r Desliza en la pantalla principal para ver toda la info de tu fiesta. \r En la pantalla de la info podes anotarte y seguir más de cerca todo lo que la fiesta tiene para vos.");
+            }).click(function(){
+               alert("Frizzé pone todas las fiestas en tu mano.\r Desliza en la pantalla principal para ver toda la info de tu fiesta. \r En la pantalla de la info podes anotarte y seguir más de cerca todo lo que la fiesta tiene para vos.");
+            });
 }
 
 

@@ -278,7 +278,7 @@ cursor: move;
 border-radius: 3px;
 background-color: rgba(73, 164, 230, 0.1);
 padding: 1px;
-border-bottom: 2px solid #009ff2;
+border-bottom: 2px solid #ffc000;
 margin-left: -3px;
 margin-top: -3px;
 width: 100%;
@@ -342,7 +342,7 @@ margin-left: -3px !important;
     font-size: 27px !important;
     padding: 10px !important
 }
-.imagen img{-webkit-border-radius: 7px}
+.imagen img{-webkit-border-radius: 0 0 7px 3px}
 .texto {
     width: 98%;
     overflow-y: auto;
