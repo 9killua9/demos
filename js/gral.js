@@ -241,7 +241,7 @@ function termina(xq,v)
                 muestraEvento(id,'eventosactivos.php'); 
             });
 
-            $(".verMore").on( "taphold", function() {
+            $(".verMore").on( "click", function() {
                 $(".acomodaAlto").css("-webkit-transform","translate3d(0px, 0px, 0px)");
                 $(this).parent().parent().css("overflow","hidden").append($cargador1);
                 id = $(this).find('span').html();
@@ -327,14 +327,14 @@ function termina(xq,v)
                     $("#muestraContenido").html("");
             });
 
-            $(".bot1").on('taphold',function(){
+            $(".bot1").on('click',function(){
                 $(".acomodaAlto").css("-webkit-transform","translate3d(0px, 0px, 0px)");
                 $(".info2").css("margin-top","2em").hide();
                 $(".info1").css("margin-top","-2em").show();
                 $("#muestraContenido").html("");
             });
             
-            $(".bot3").on('taphold',function(){
+            $(".bot3").on('click',function(){
                     $("#muestraRedSocial").css("-webkit-transform","translate3d(0px, -4em, 0px)");
                     
                     $("form[name=guardaAsociado]").submit(function(a){
@@ -358,7 +358,7 @@ function termina(xq,v)
                         }        
                     });
             });
-            $("#muestraRedSocial .header,#muestraRedSocial .headerSombra").on('taphold',function(){
+            $("#muestraRedSocial .header,#muestraRedSocial .headerSombra").on('click',function(){
                     $("#muestraRedSocial").css("-webkit-transform","translate3d(0px, 5em, 0px)");
             });
         }
