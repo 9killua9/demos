@@ -39,6 +39,7 @@
         prov = window.localStorage.getItem(keyname);
         if (prov != null)
           window.location.href="interna.html";
+        $(".botella").css("margin-top",parseInt($(window).height())/2-140)
     });
     document.addEventListener("deviceready",onDeviceReady,false);
     // Cordova is ready
@@ -52,7 +53,7 @@
 <body onload="">
   <div class="fondo1">
       <form name="cargaInicio" style="margin:0 auto !important;">
-        <select name="cambiaProvincia" style="margin:140px 0 0 33px !important; width:190px; height:30px;">
+        <select name="cambiaProvincia" class="selectIndex" style="">
           <option value="-"> Elija su provincia</option>
           <option value="0"> Buenos Aires </option>
               <option value="3"> Cordoba </option>
@@ -79,8 +80,9 @@
               <option value="21"> Tierra del Fuego </option>
               <option value="19"> Chubut </option>
         </select>
-        <input type="submit" class="botonVerMas1" name=" Ir " style="margin-left:33px !important; width:190px;" />
+        <input type="submit" class="botonVerMas1 modif" name=" Ir " value=" Ver fiestas "/>
       </form>
+      <img src="template/fondo/2.png" class="botella";/>
     </div>
 </body>
 </html>

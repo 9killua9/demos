@@ -166,7 +166,7 @@ function termina(xq,v)
                                         <p class="floatLeft nombreDelBoliche futura w100" style="margin-bottom:5px !important;"><strong>'+v[$i]['titulo']+'</strong></p>\
                                         <p class="floatLeft direccionDelBoliche futura" style="margin-top:8px;">'+v[$i]['dir_boliche']+'</p>\
                                         <p class="floatLeft provinciaDelBoliche futura" style="clear:both;">'+v[$i]['barrio']+'</p>\
-                                        <p class="floatLeft botonVerMas icon add">Deslize para ver m&aacute;s</p>\
+                                        <p class="floatLeft botonVerMas verMore icon add">Deslize para ver m&aacute;s</p>\
                                     </div>\
                                 </div>';
                             $j++;
@@ -182,7 +182,7 @@ function termina(xq,v)
                                         <p class="floatLeft nombreDelBoliche futura w100" style="margin-bottom:5px !important;"><strong>'+v[$i]['titulo']+'</strong></p>\
                                         <p class="floatLeft direccionDelBoliche futura" style="margin-top:8px;">'+v[$i]['dir_boliche']+'</p>\
                                         <p class="floatLeft provinciaDelBoliche futura" style="clear:both;">'+v[$i]['barrio']+'</p>\
-                                        <p class="floatLeft botonVerMas icon add">Deslize para ver m&aacute;s</p>\
+                                        <p class="floatLeft botonVerMas verMore icon add">Deslize para ver m&aacute;s</p>\
                                     </div>\
                                 </div>';
                             $j++;
@@ -231,6 +231,14 @@ function termina(xq,v)
                 id = $(this).attr("id");
                 muestraEvento(id,'eventosactivos.php'); 
             });
+
+            $(".verMore").on( "taphold", function() {
+                $(".acomodaAlto").css("-webkit-transform","translate3d(0px, 0px, 0px)");
+                $(this).css("overflow","hidden").append($cargador1);
+                id = $(this).attr("id");
+                muestraEvento(id,'eventosactivos.php');
+            });
+
             
             $("html, body").width(parseInt($(window).width())).height(parseInt($(window).height()));
             cargaSlides();
@@ -257,7 +265,7 @@ function termina(xq,v)
                    </div>\
 \
                     <div class="swiper-slide red-slide overflowHidden" id="muestraRedSocial" style="width:'+parseInt($(window).width())+'px">\
-                      <div class="header">CERRAR</div><div class="headerSombra"></div>\
+                      <div class="header">CERRAR <div class="floatRight" style="margin-right:9px;">[X]</div></div><div class="headerSombra"></div>\
                       <div class="w100">\
                         <div class="clearBoth"></div>\
                         <form name="guardaAsociado">\
@@ -315,11 +323,6 @@ function termina(xq,v)
                 $(".info2").css("margin-top","2em").hide();
                 $(".info1").css("margin-top","-2em").show();
                 $("#muestraContenido").html("");
-            }).click(function(){
-                $(".acomodaAlto").css("-webkit-transform","translate3d(0px, 0px, 0px)");
-                $(".info2").css("margin-top","2em").hide();
-                $(".info1").css("margin-top","-2em").show();
-                $("#muestraContenido").html("");
             });
             
             $(".bot3").on('taphold',function(){
@@ -345,35 +348,10 @@ function termina(xq,v)
                             alert("Ingrese su email");
                         }        
                     });
-            }).click(function(){
-                    $("#muestraRedSocial").css("-webkit-transform","translate3d(0px, -4em, 0px)");
-                    
-                    $("form[name=guardaAsociado]").submit(function(a){
-                        a.preventDefault();
-                        // creamos nuestra regla con expresiones regulares.
-                        var filter = /[\w-\.]{3,}@([\w-]{2,}\.)*([\w-]{2,}\.)[\w-]{2,4}/;
-                        
-                        if($("form[name=guardaAsociado] input[name=email]").val() != '' )
-                            if( validar_email($("form[name=guardaAsociado] input[name=email]").val()) )
-                            {                
-                                $data = 'h=cargaEmail&'+$("form[name=guardaAsociado]").serialize();
-                                lmPost($url,$data,"cargaEmail");
-                            }
-                            else
-                            {   
-                                alert("E-mail incorrecto");
-                            }                    
-                        else
-                        {
-                            alert("Ingrese su email");
-                        }        
-                    });
             });
             $("#muestraRedSocial .header,#muestraRedSocial .headerSombra").on('taphold',function(){
                     $("#muestraRedSocial").css("-webkit-transform","translate3d(0px, 5em, 0px)");
-            }).click(function(){
-                    $("#muestraRedSocial").css("-webkit-transform","translate3d(0px, 5em, 0px)");
-            })
+            });
         }
     }
     else if( xq == "donde" )
