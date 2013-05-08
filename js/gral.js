@@ -32,7 +32,15 @@ $(document).ready(function(){
 
 
     $(window).bind("orientationchange", function(event){        
+        $w = parseInt($(window).width());
+        $h = parseInt($(window).height());
         
+        $(".acomodaAlto, .swiper-n3, .red-slide, .swiper-n1, .swiper-n2").height($h);
+        $('.swiper-nested1,.acomodaAlto').width($w*2);
+        $("#cargaPresentes, #muestraInicial,#muestraContenido,#muestraRedSocial").width($w)
+        $(".pagination-nested1").attr('style',"margin-top:"+($h-30)+'px !important;');
+        cargaSlides();
+        event.preventDefault();
     });
 });
 /* Comienzo de las funciones 

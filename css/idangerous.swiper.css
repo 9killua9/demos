@@ -1,4 +1,7 @@
 /* Loading Circle */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+
+}
 .ball {
     background-color: rgba(0,0,0,0);
     border:5px solid rgba(255,192,0,0.9);
@@ -107,7 +110,7 @@
 	100%{-webkit-transform:scale(.3);}
 }
 /* Swiper Styles */
-body,html{height: 100% !important; margin:0px; background:url("../template/fondo/fondo.jpg") repeat scroll 0 0 transparent; overflow: hidden;}
+body,html{height: 100% !important; margin:0px; background:url("../template/fondo/fondo.jpg") repeat scroll 0 0 transparent; overflow: hidden; -webkit-text-size-adjust: none;min-width: 320px;-webkit-min-width: 320px;}
 *{}
 .swiper-container {
 	position:relative;
