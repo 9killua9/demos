@@ -9,12 +9,12 @@
     border-top:5px solid rgba(0,0,0,0);
     border-left:5px solid rgba(0,0,0,0);
     -webkit-border-radius:50px;
-    -webkit-box-shadow: 0 0 35px #2187e7;
+    -webkit-box-shadow: 0 0 35px #ffffff;
     width:50px;
     height:50px;
     margin:0 auto;
-    -moz-animation:spin .5s infinite linear;
-    -webkit-animation:spin .5s infinite linear;
+    -moz-animation:spin .3s infinite linear;
+    -webkit-animation:spin .3s infinite linear;
 }
 
 .ball1 {
@@ -24,14 +24,14 @@
     border-top:5px solid rgba(0,0,0,0);
     border-left:5px solid rgba(0,0,0,0);
     -webkit-border-radius:50px;
-    -webkit-box-shadow: 0 0 15px #2187e7; 
+    -webkit-box-shadow: 0 0 15px #000000; 
     width:30px;
     height:30px;
     margin:0 auto;
     position:relative;
     top:-50px;
-    -moz-animation:spinoff .5s infinite linear;
-    -webkit-animation:spinoff .5s infinite linear;
+    -moz-animation:spinoff .3s infinite linear;
+    -webkit-animation:spinoff .3s infinite linear;
 }
 
 @-moz-keyframes spin {
@@ -339,7 +339,7 @@ margin-left: -3px !important;
 }
 .contenedor{line-height: normal !important; background-color: rgba('0,0,0,0.3')}
 .contenedor div{ font-size:12px;font-family: tahoma; text-align: left;}
-#muestraContenido{background-color: rgba(0,0,0,0.6) !important;}
+#muestraContenido{background-color: rgba(0,0,0,0.6) !important;background: url("../template/fondo/pattern_40.gif") scroll 0 0 transparent !important;}
 .titulo
 {
     font-size: 27px !important;
@@ -395,9 +395,10 @@ margin-left: -3px !important;
     -webkit-linear-gradient( #3c3c3c , #111 ); 
     background-image: -moz-linear-gradient( #3c3c3c , #111 ); background-image: -ms-linear-gradient( #3c3c3c , #111 ); background-image: -o-linear-gradient( #3c3c3c , #111 ); background-image: linear-gradient( #3c3c3c , #111 ); line-height: normal !important; font-family: Arial;
 }
-.bot1{width:30%;}
 .bot2{width:38%; border-left:1px outset #3b3b3b; border-right:1px inset #3b3b3b;margin-top: -3px !important;}
-.bot3{width:30%;}
+
+.bot1{border-right:1px inset #3b3b3b;width:30% !important;}
+.bot3{width:68% !important;}
 .acomodaTextoIzquierda{margin-right: -40px !important;}
 .selectIndex{margin: 8em 0 0 -0.7em !important;
 width: 110%;
@@ -414,3 +415,4 @@ font-weight: bold;
 font-size: 20px;}
 .bot1Volv{border-right:1px inset #3b3b3b;width:30% !important;}
 .bot2Volv{width:68% !important;}
+.dir{background: rgba(0,0,0,0.6) !important;}

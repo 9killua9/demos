@@ -5,7 +5,7 @@
 $url     = 'http://www.reiatsu.com.ar/phonegap/fiestas_frizze/php/ajax.php';
 $urlFbk  = 'php/facebook/ajax.php';
 $nImagen = 0;
-$cargador1 = '<div class="positionAbsolute aja cargador overflowHidden" style=" height:134px !important; background:url(template/fondo/pattern_40.gif) repeat scroll 0 0 transparent; opacity:.9; z-index:900; width:'+parseInt($(window).width())+'px;">\
+$cargador1 = '<div class="positionAbsolute aja cargador overflowHidden" style=" height:134px !important; background:url(template/fondo/pattern_40.gif) repeat scroll 0 0 transparent; opacity:.98; z-index:900; width:'+parseInt($(window).width())+'px;">\
                 <div class="container" style="margin-top:27px !important;">\
                     <div class="content">\
                     <div class="ball"></div>\
@@ -14,13 +14,15 @@ $cargador1 = '<div class="positionAbsolute aja cargador overflowHidden" style=" 
                 </div>\
             </div>';
 
-$cargador = '<div class="positionAbsolute aja cargador overflowHidden" style=" height:'+parseInt($(window).height())+'px !important; background:url(template/fondo/pattern_40.gif) repeat scroll 0 0 transparent; opacity:.9; z-index:900; width:'+parseInt($(window).width())+'px;">\
+$cargador = '<div class="positionAbsolute aja cargador overflowHidden" style=" height:'+parseInt($(window).height())+'px !important; background:url(template/fondo/pattern_40.gif) repeat scroll 0 0 transparent; opacity:.98; z-index:900; width:'+parseInt($(window).width())+'px;">\
                 <div class="container" style="margin-top:27px !important;">\
                     <div class="content">\
                     <div class="ball"></div>\
                     <div class="ball1"></div>\
                     </div>\
+                    ..Cargando..\
                 </div>\
+                <img src="template/fondo/2.png" class="botella"; style="opacity:.6; margin-top: '+(parseInt($(window).height())-390)+'px" />\
             </div>';
 
 
@@ -168,13 +170,13 @@ function termina(xq,v)
                     /*$col = get_random_color();*/
 
                     if($i%2 == 0)
-                        $col = "rgba(0,0,0, 0.71)";/*$col = "rgba(5,33,248, 0.2)";*/
+                        $col = "background: url('template/fondo/pattern_40.gif') scroll 0 0 transparent !important;";/*$col = "rgba(5,33,248, 0.2)";*/
                     else
-                        $col = "rgba(255,255,255, 0.1)";
+                        $col = "background-color:rgba(255,255,255, 0.1)";
 
                     if(mes == v['compara_mes'] && dia > v['compara_dia'])
                     {
-                        $ht += '<div class="swiper-slide W257X112" id="'+v[$i]['id']+'" style="width:'+parseInt($(window).width())+'px; height:133px !important; background-color:'+$col+' ">\
+                        $ht += '<div class="swiper-slide W257X112" id="'+v[$i]['id']+'" style="width:'+parseInt($(window).width())+'px; height:133px !important; '+$col+' ">\
                                     <div class="floatLeft overflowHidden contenedorImagenMini miniImagenFiesta">\
                                         <img src="http://www.reiatsu.com.ar/clientes/frizze/facebook/fiestas_frizze/'+v[$i]['imagen']+'" class="floatLeft" style="width:60px;" />\
                                         <div class="floatLeft" style=" width:120px;text-align:center;font-size:0.8em !important">'+v[$i]['fecha']+'</div>\
@@ -273,7 +275,7 @@ function termina(xq,v)
             $ht = '<div class="header">'+v[0]['titulo']+' - <small style="font-size:16px; color:#cdcdcd"> '+v[0]['fecha']+' </small></div><div class="headerSombra"></div>';
             $ht += '<div class="contenedor floatLeft">\
                         <div class="imagen">\
-                            <img src="https://maps.googleapis.com/maps/api/staticmap?center='+v[0]['dir_boliche']+', '+v[0]['barrio']+', '+v[0]['provincia']+', Argentina&zoom=16&size='+parseInt($(window).width())+'x200&markers='+v[0]['dir_boliche']+', '+v[0]['barrio']+', '+v[0]['provincia']+'|&sensor=false" width="'+parseInt($(window).width())+'" height="200" />\
+                            <img src="https://maps.googleapis.com/maps/api/staticmap?center='+v[0]['dir_boliche']+', '+v[0]['barrio']+', '+v[0]['provincia']+', Argentina&zoom=16&size='+parseInt($(window).width())+'x200&markers='+v[0]['dir_boliche']+', '+v[0]['barrio']+', '+v[0]['provincia']+'|&sensor=false" width="'+parseInt($(window).width())+'" height="200" alt="CARGANDO..."/>\
                         </div>\
                         <div class="dir" style="height: 17px; padding: 10px !important; padding-top: 12px !important; font-size: 13px; font-weight: bold; color: #ffc000; margin-bottom: 1.3em !important; -webkit-box-shadow: -5px -6px 30px #ffc000;">\
                             <img src="template/fondo/pin.png" style="width: 34px; margin-right:3px !important;float: right; margin-top: -9px !important;" />'+v[0]['dir_boliche']+', '+v[0]['barrio']+'\
