@@ -135,10 +135,11 @@ function funcionesDeCarga()
     // keyname is now equal to "key"
     prov = window.localStorage.getItem(keyname);
 
-    cargaEventosHome(prov);
-
-    $(window).bind("orientationchange", function(event){        
-    });
+    keyname = window.localStorage.key("prov");
+        // keyname is now equal to "key"
+        prov = window.localStorage.getItem(keyname);
+        if (prov != null && prov != "")
+          cargaEventosHome(prov);
 
     $(".bot2").on('taphold',function(){
                alert("Frizzé pone todas las fiestas en tu mano.\r Desliza en la pantalla principal para ver toda la info de tu fiesta. \r En la pantalla de la info podes anotarte y seguir más de cerca todo lo que la fiesta tiene para vos.");

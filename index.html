@@ -37,8 +37,9 @@
         keyname = window.localStorage.key("prov");
         // keyname is now equal to "key"
         prov = window.localStorage.getItem(keyname);
-        if (prov != null)
-          window.location.href="interna.html";
+        if (prov != null && prov != "")
+          alert(prov);//window.location.href="interna.html";
+        
         $(".botella").css("margin-top",parseInt($(window).height())/2-140)
     });
     document.addEventListener("deviceready",onDeviceReady,false);

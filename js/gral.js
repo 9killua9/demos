@@ -25,6 +25,15 @@ $cargador = '<div class="positionAbsolute aja cargador overflowHidden" style=" h
 
 
 $(document).ready(function(){
+    $(".bot1Volv").on('click',function(){
+            window.localStorage.setItem("prov", "");
+            location.href="index.html";
+    });
+
+
+    $(window).bind("orientationchange", function(event){        
+        
+    });
 });
 /* Comienzo de las funciones 
 =================================================================== */
@@ -166,7 +175,7 @@ function termina(xq,v)
                                         <p class="floatLeft nombreDelBoliche futura w100" style="margin-bottom:5px !important;"><strong>'+v[$i]['titulo']+'</strong></p>\
                                         <p class="floatLeft direccionDelBoliche futura" style="margin-top:8px;">'+v[$i]['dir_boliche']+'</p>\
                                         <p class="floatLeft provinciaDelBoliche futura" style="clear:both;">'+v[$i]['barrio']+'</p>\
-                                        <p class="floatLeft botonVerMas verMore icon add">Deslize para ver m&aacute;s</p>\
+                                        <p class="floatLeft botonVerMas verMore icon add"><span class="oculto">'+v[$i]['id']+'</span>Deslize para ver m&aacute;s</p>\
                                     </div>\
                                 </div>';
                             $j++;
@@ -182,7 +191,7 @@ function termina(xq,v)
                                         <p class="floatLeft nombreDelBoliche futura w100" style="margin-bottom:5px !important;"><strong>'+v[$i]['titulo']+'</strong></p>\
                                         <p class="floatLeft direccionDelBoliche futura" style="margin-top:8px;">'+v[$i]['dir_boliche']+'</p>\
                                         <p class="floatLeft provinciaDelBoliche futura" style="clear:both;">'+v[$i]['barrio']+'</p>\
-                                        <p class="floatLeft botonVerMas verMore icon add">Deslize para ver m&aacute;s</p>\
+                                        <p class="floatLeft botonVerMas verMore icon add"><span class="oculto">'+v[$i]['id']+'</span>Deslize para ver m&aacute;s</p>\
                                     </div>\
                                 </div>';
                             $j++;
@@ -234,8 +243,8 @@ function termina(xq,v)
 
             $(".verMore").on( "taphold", function() {
                 $(".acomodaAlto").css("-webkit-transform","translate3d(0px, 0px, 0px)");
-                $(this).css("overflow","hidden").append($cargador1);
-                id = $(this).attr("id");
+                $(this).parent().parent().css("overflow","hidden").append($cargador1);
+                id = $(this).find('span').html();
                 muestraEvento(id,'eventosactivos.php');
             });
 
