@@ -31,9 +31,9 @@ $(document).ready(function(){
             window.localStorage.setItem("prov", "");
             location.href="index.html";
     });
+});
 
-
-    $(window).bind("orientationchange", function(event){        
+$(window).bind("orientationchange", function(event){        
         $w = parseInt($(window).width());
         $h = parseInt($(window).height());
         
@@ -42,9 +42,8 @@ $(document).ready(function(){
         $("#cargaPresentes, #muestraInicial,#muestraContenido,#muestraRedSocial").width($w)
         $(".pagination-nested1").attr('style',"margin-top:"+($h-30)+'px !important;');
         cargaSlides();
-        event.preventDefault();
+        //event.preventDefault();
     });
-});
 /* Comienzo de las funciones 
 =================================================================== */
 function cargaEventosHome(prov)
