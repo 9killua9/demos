@@ -235,8 +235,8 @@ function termina(xq,v)
             } // termina bucle
             
             /*$("#cargaBoliViejos").html($htv);*/
-            /*$("#cargaPresentes").html($ht);
-            $(".cargador").remove();*/
+            $("#cargaPresentes").html($ht);
+            $(".cargador").remove();
 
             $(".W257X112").on( "swiperight", function() {
                 $(".acomodaAlto").css("-webkit-transform","translate3d(0px, 0px, 0px)");

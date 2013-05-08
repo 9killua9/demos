@@ -400,7 +400,7 @@ margin-left: -3px !important;
 .bot1{border-right:1px inset #3b3b3b;width:30% !important;}
 .bot3{width:68% !important;}
 .acomodaTextoIzquierda{margin-right: -40px !important;}
-.selectIndex{margin: 8em 0 0 -0.7em !important;
+.selectIndex{
 width: 110%;
 height: 2em;
 webkit-border-radius: 4px;
@@ -409,10 +409,14 @@ font-size: 17px;
 font-weight: normal;
 font-family: arial;
 text-align: center;}
-.modif{margin-left: -0.6em !important;
+.modif{margin: 0.6em 0 -52px -0.6em !important;
 width: 110%;
 font-weight: bold;
 font-size: 20px;}
 .bot1Volv{border-right:1px inset #3b3b3b;width:30% !important;}
 .bot2Volv{width:68% !important;}
 .dir{background: rgba(0,0,0,0.6) !important;}
+.floatSelect{margin: 11em 0 1em -0.7em !important;
+background: url('../template/fondo/select.png') no-repeat 14px 0 transparent !important;
+width: 270px;
+height: 53px;}
