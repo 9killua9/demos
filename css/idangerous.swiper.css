@@ -110,7 +110,7 @@
 	100%{-webkit-transform:scale(.3);}
 }
 /* Swiper Styles */
-body,html{height: 100% !important; margin:0px; background:url("../template/fondo/fondo.jpg") repeat scroll 0 0 transparent; overflow: hidden; -webkit-text-size-adjust: none;min-width: 320px;-webkit-min-width: 320px;}
+body,html{height: 100% !important; margin:0px; background:url("../template/fondo/fondoxxx.jpg") repeat scroll 0 0 transparent; overflow: hidden; -webkit-text-size-adjust: none;min-width: 320px;-webkit-min-width: 320px;}
 *{}
 .swiper-container {
 	position:relative;
@@ -339,7 +339,7 @@ margin-left: -3px !important;
 }
 .contenedor{line-height: normal !important; background-color: rgba('0,0,0,0.3')}
 .contenedor div{ font-size:12px;font-family: tahoma; text-align: left;}
-#muestraContenido{background-color: rgba(0,0,0,0.6) !important;background: url("../template/fondo/pattern_40.gif") scroll 0 0 transparent !important;}
+#muestraContenido{background-color: rgba(0,0,0,0.6) !important;background: url("../template/fondo/fondo_1.jpg") repeat scroll -0 90px transparent !important;}
 .titulo
 {
     font-size: 27px !important;
@@ -382,7 +382,7 @@ margin-left: -3px !important;
     -webkit-transition-property:-webkit-transform, left, top;
     -webkit-transition-duration:0.3s;
     -webkit-transform:translate3d(0px,5em,0);
-    background:url('../template/fondo/pattern_40.gif') repeat scroll 0 0 transparent !important;}
+    background:url('../template/fondo/pattern_40.jpg') repeat scroll 0 0 transparent !important;}
 .nicescroll-rails, .nicescroll-rails div{ left:-3px !important;}
 
 .footer{
@@ -394,6 +394,7 @@ margin-left: -3px !important;
     background-image: -webkit-gradient(linear, left top, left bottom, from( #3c3c3c), to( #111)); background-image: 
     -webkit-linear-gradient( #3c3c3c , #111 ); 
     background-image: -moz-linear-gradient( #3c3c3c , #111 ); background-image: -ms-linear-gradient( #3c3c3c , #111 ); background-image: -o-linear-gradient( #3c3c3c , #111 ); background-image: linear-gradient( #3c3c3c , #111 ); line-height: normal !important; font-family: Arial;
+    border-top:1px solid #f0f0f0;
 }
 .bot2{width:38%; border-left:1px outset #3b3b3b; border-right:1px inset #3b3b3b;margin-top: -3px !important;}
 
