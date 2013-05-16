@@ -6,14 +6,14 @@
         id        = "com.phonegap.fiestas-frizze"
         version   = "1.0.0">
 
-    <name>Fiestas Frizzé</name>
+    <name>Testeo de app</name>
 
     <description>
-        Esta app contiene toda la información sobre tus fiestas y eventos, para que estés aún más cerca de lo que te gusta.
+        App de prueba
     </description>
 
     <author href="http://www.reiatsu.com.ar" email="info@reiatsu.com.ar">
-        Frizzé Development
+        Reiatsu
     </author>
 
     <!--
